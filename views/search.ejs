@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head'); %>
+   <title> Search Results </title>
+    
+  <style>
+    body{
+        background-color:#1E2023 ;
+        color:white;
+    }
+   
+   
+  .img-content{
+    padding-top:5rem;
+     height:auto;
+   }
+  </style>
+
+</head>
+<body>
+
+<header>
+  <%- include('partials/header'); %>
+</header>
+<main>
+  
+
+  <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="/assets/img/up-arrow.png" style="width:34px;" /></button>
+
+<div class="section section-our-team-freebie">
+       
+  <div class="container img-content">
+    <div class="row">
+        <% products.forEach(function(image) { %>
+            
+         <div class="col-md-3 col-sm-4 col-xs-6 shrink ">
+            <a href="/product/<%= image.name %>" class="fancybox" rel="ligthbox">
+            <div class="badge bg-dark text-white"  style="position:absolute;top: 0.5rem; right: 1rem"></div>
+            <img  class="img-responsive" 
+            src="<%= image.profilePhotoLocation%>" />
+        </a> 
+    
+        <p> <%= image.name%></p>
+        </div>
+       <% }) %>  
+    </div>
+    
+    </div>  
+    </div>
+</main>
+  
+   
+<footer>
+  
+  <%- include('partials/footer'); %>
+</footer>
+
+
+</body>
+</html>
+

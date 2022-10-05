@@ -1,0 +1,5 @@
+User-agent: Googlebot
+Disallow: /admin
+
+
+Sitemap: http://www.pixground.com/sitemap.xml

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head'); %>
+   <title> User Profile  </title>
+
+
+   <style>
+    .img-responsive{
+        clip-path:circle();
+        width:16rem;
+    }
+   </style>
+</head>
+<body>
+
+<header>
+  <%- include('partials/header'); %>
+</header>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top"><img src="/assets/img/up-arrow.png" style="width:34px;" /></button>
+
+
+<main>
+
+   <section class="content-item grey" style="padding-top:5.5rem;padding-bottom:10rem;" id="gallery-item">
+    <div class="container">
+      <div class="row">
+          <div class="col-sm-8" >
+			 
+			   <h2></h2>
+			   
+			  
+					<span class="tagText"></span>
+				 
+			 
+              <img src="<%=user.ProfilePhotoLocation%>" class="img-responsive" alt="">
+             
+			</div>
+            <div class="col-sm-4">
+               
+                <div class="box">
+		
+					
+				</div>
+				<div class="boxTwo">	
+                   <ul class="list-unstyled">
+                        <li>Username : <%=user.username%></li>
+                        <li>Email : <%= user.email%></li>
+                        <li>Password : <%= user.password%></li>
+                    </ul>
+
+					
+                </div>
+			   
+            </div>
+        </div>
+    </div>
+  </section>
+ 
+      
+
+
+</main>
+
+
+
+
+      <footer>
+        <%- include('partials/footer'); %>
+      </footer>
+      
+
+ 
+  
+  <script>
+    
+   function myFunction(x) {
+  x.classList.toggle("heart-fill");
+   }
+
+  
+
+	$(document).ready(function(){
+     $(".fancybox").fancybox({
+        openEffect: "none",
+        closeEffect: "none"
+    });
+    
+    $(".zoom").hover(function(){
+		
+		$(this).addClass('transition');
+	}, function(){
+        
+		$(this).removeClass('transition');
+	});
+   });
+  </script>
+ 
+   
+
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+
+
+
+<nav class="navbar navbar-default navbar-transparent navbar-fixed-top" >
+  <!-- if you want to keep the navbar hidden you can add this class to the navbar "navbar-burger"-->
+  <div class="container">
+      <div class="navbar-header">
+          <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar bar1"></span>
+              <span class="icon-bar bar2"></span>
+              <span class="icon-bar bar3"></span>
+          </button>
+          <a href="/" class="navbar-brand" >
+              <img style="width:7rem;" src="/img/logo.png">
+          </a>   
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown drop">
+          <a href="#" class="seconDropbtn btn-default bg-transparent dropdown-toggle" 
+          data-toggle="dropdown" role="button" aria-expanded="false">
+            <i class="bi bi-border-all" style="padding-right:3px; color:white;"></i>
+            All Categories <span class="caret"></span></a>
+          <div class="dropdown-content" role="menu">
+            <a href="#">Action</a>
+            <a href="#">Another action</a>
+            <a href="#">Something else here</a>
+          </div>
+        </li>
+       </ul>
+       
+       <div class="input-group" style="padding-left:5rem;">
+                            
+        <div class="input-group-btn search-panel">
+     
+           
+            <div class="dropdown drop" >
+                <button type="button" style="height:3rem" class="dropbtn btn-default dropdown-toggle search">All Designs</button>
+                <div class="dropdown-content">
+                  <a href="/">Creative Design</a>
+                   <li class="list"> All Design</li> 
+                   <li class="list"> Templates</li> 
+                  <a href="/">Photography</a>
+                      <li class="list" href="/">All Categories</li>
+                </div>
+              </div>
+            
+        </div>
+   
+        <form action="/search" method="GET">
+          
+           <input class="form-control search-input" style="width:280px;height:3rem; 
+           border-top-right-radius:4px;
+           border-bottom-right-radius:4px;" name="result" id="query" type="text" 
+           placeholder="Search" required>
+           
+        </form> 
+
+        <% if(!user) { %> 
+          <ul class="nav navbar-nav navbar-right">
+     
+              <a href="/login" class="login"> <button class="btn" type="submit">
+                  <i class="bi bi-person"></i>
+                  Login
+              </button>
+              </a>
+            </ul>
+            <% } else { %>
+              <ul class="nav navbar-nav navbar-right">
+              <div class="dropdown">
+                  <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                      <i class="bi bi-person"></i>  <%= user.username %>
+                  <span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    <li><a href="/profile">Profile</a></li>
+                    <li><a href="/logout">Log out</a></li>
+                    
+                  </ul>
+                </div>
+              </ul>
+        <% } %>
+     </div>
+
+     
+       
+      
+       
+ 
+    </div>
+    
+
+      
+  </div>
+</nav>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<%- include('partials/head'); %>
+  
+	<title>Registration</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+
+	<link rel="stylesheet" href="./css/main.css">
+
+
+</head>
+<body>
+<header>
+    <%- include('partials/header'); %>
+</header>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top"><img src="/assets/img/up-arrow.png" style="width:34px;" /></button>
+
+
+		<div class = "container" >
+			<div class="wrapper">
+				<form action="/register" id="form1" method="post" name="Login_Form" class="form-signin">       
+					<h3 class="form-signin-heading">Welcome! Please Sign In</h3>
+					  <hr class="colorgraph"><br>
+					  
+				<input type="email" name="email" placeholder="E-mail" required="" class="form-control"><br/>
+						
+						<input id="username" name="username" type="text" placeholder="Username" class="form-control" required>
+						<input id="new-password" name="password" type="password" placeholder="Password"  required>
+						
+						
+						<input type="hidden" name="_csrf" value="<%= csrfToken %>">
+				    <button type="submit" value="Register" class="btn btn-success">Sign up</button>
+				
+				<div class="mssg bg-danger">
+				  <span id="check"></span>
+				</div>
+				<a href="/login" 
+				class="link-danger">
+			  <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? </p>
+			  </a>
+			  </form>			
+			</div>
+		</div>
+	
+
+
+	<footer>
+		<%- include('partials/footer'); %>
+	  </footer>
+		  
+</body>
+</html>
