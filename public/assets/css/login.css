@@ -1,23 +1,6 @@
-/*body,
- table,
-    thead,
-    tr,
-    tbody,
-    th,
-    td {
-        text-align: center;
-    }*/
-
-
-.mssg{
-	margin-top: 5px;
-	margin-bottom: 5px;
-	border-radius: 5px;
-    background-color:#1E2023 ;
-}
 body{
     background-color:#1E2023 ;
-    color:white;text-align: center !important;
+    color:white;
 }
 .wrapper {    
 margin-top: 80px;
@@ -75,5 +58,3 @@ background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5
 }.wrapper{
 background-color:#1E2023 ;
 }
-
-

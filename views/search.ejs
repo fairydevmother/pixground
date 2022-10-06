@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <%- include('partials/head'); %>
-   <title> Search Results </title>
+   <title> Search Results |</title>
     
   <style>
     body{
@@ -23,39 +23,65 @@
 <header>
   <%- include('partials/header'); %>
 </header>
-<main>
+<main style="height:70rem;">
   
 
-  <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="/assets/img/up-arrow.png" style="width:34px;" /></button>
-
-<div class="section section-our-team-freebie">
-       
-  <div class="container img-content">
-    <div class="row">
-        <% products.forEach(function(image) { %>
-            
-         <div class="col-md-3 col-sm-4 col-xs-6 shrink ">
-            <a href="/product/<%= image.name %>" class="fancybox" rel="ligthbox">
-            <div class="badge bg-dark text-white"  style="position:absolute;top: 0.5rem; right: 1rem"></div>
-            <img  class="img-responsive" 
-            src="<%= image.profilePhotoLocation%>" />
-        </a> 
-    
-        <p> <%= image.name%></p>
-        </div>
-       <% }) %>  
-    </div>
-    
-    </div>  
+    <div class="karya">
+      <div class="test">
+        <div class="section section-our-team-freebie"></div> 
+        <div class="container img-content" >
+          <div class="row">
+              <% products.forEach(function(image) { %>
+                  
+               <div class="col-md-3 col-sm-4 col-xs-6 shrink ">
+                  <a href="/product/<%= image.name %>" class="fancybox" rel="ligthbox">
+                  
+                  <% if(image.imgType=='image/png'){ %>
+                  <div class="badge bg-dark text-white"  
+                  style="position:absolute;top: 0.5rem; right: 1rem">  4K  </div>
+                  <% } else { %>
+                   
+                  <div> </div>
+                      <% }%>
+                  <img  class="img-responsive" 
+                  src="<%= image.profilePhotoLocation%>" />
+              </a> 
+          
+              <p> <%= image.name%></p>
+              </div>
+        <% }) %>  
+          </div>
+          </div>
+      </div>
     </div>
 </main>
-  
+   
    
 <footer>
   
   <%- include('partials/footer'); %>
 </footer>
 
+
+<script>
+  
+
+$(".karya div").slice(4).hide();
+
+var mincount = 4;
+var maxcount = 99999;
+
+
+$(window).scroll(function () {
+    if ($(window).scrollTop() + $(window).height() >= $(document).height() - 50) {
+        $(".karya div").slice(mincount, maxcount).slideDown(1400);
+
+        mincount = mincount + 10;
+        maxcount = maxcount + 10
+
+    }
+});
+</script>
 
 </body>
 </html>

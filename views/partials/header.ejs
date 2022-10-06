@@ -12,10 +12,11 @@
               <span class="icon-bar bar3"></span>
           </button>
           <a href="/" class="navbar-brand" >
-              <img style="width:7rem;" src="/img/logo.png">
+              <img style="width:7rem;" src="/assets/img/logo.png">
           </a>   
       </div>
-
+      
+  
       <!-- Collect the nav links, forms, and other content for toggling -->
      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
@@ -25,32 +26,36 @@
             <i class="bi bi-border-all" style="padding-right:3px; color:white;"></i>
             All Categories <span class="caret"></span></a>
           <div class="dropdown-content" role="menu">
-            <a href="#">Action</a>
-            <a href="#">Another action</a>
-            <a href="#">Something else here</a>
+            <a href="#">PNG Pictures</a>
+            <a href="#">Popular PSD </a>
+            <a href="#">Illustrations</a>
+            <a href="#">Backgrounds</a>
           </div>
         </li>
        </ul>
        
-       <div class="input-group" style="padding-left:5rem;">
+       <ul class="input-group" style="padding-left:5rem;">
                             
-        <div class="input-group-btn search-panel">
+        <div class="input-group-btn search-panel srch-box">
      
            
             <div class="dropdown drop" >
-                <button type="button" style="height:3rem" class="dropbtn btn-default dropdown-toggle search">All Designs</button>
+                <button type="button" style="height:3rem" class="dropbtn btn-default dropdown-toggle search">All Pictures</button>
                 <div class="dropdown-content">
-                  <a href="/">Creative Design</a>
-                   <li class="list"> All Design</li> 
-                   <li class="list"> Templates</li> 
+                  <a href="/">Creative</a>
+                   <li class="list"> PSD</li> 
+                   <li class="list"> Backgrounds</li> 
+                    
                   <a href="/">Photography</a>
                       <li class="list" href="/">All Categories</li>
+                
+
                 </div>
               </div>
             
         </div>
    
-        <form action="/search" method="GET">
+        <form action="/search"  method="GET" class="srch-input">
           
            <input class="form-control search-input" style="width:280px;height:3rem; 
            border-top-right-radius:4px;
@@ -62,7 +67,7 @@
         <% if(!user) { %> 
           <ul class="nav navbar-nav navbar-right">
      
-              <a href="/login" class="login"> <button class="btn" type="submit">
+              <a href="/login" > <button class="btn" type="submit">
                   <i class="bi bi-person"></i>
                   Login
               </button>
@@ -82,7 +87,7 @@
                 </div>
               </ul>
         <% } %>
-     </div>
+            </ul>
 
      
        

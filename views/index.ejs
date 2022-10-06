@@ -4,10 +4,16 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Home Page</title>
+    <title>Explore Free High Quality Photos, Images And More | 4K Pictures| Pixground </title>
+    <meta name="description" content='Browse free high quality photos, pictures and 4k images. Explore trending categories. Find backgrounds, wallpapers, banners and more. ">
+    <link rel="canonical" href="https://pixground.com" />
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    
+    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+    
     <link href="/assets/css/bootstrap.css" rel="stylesheet" />
     <link href="/assets/css/gaia.css" rel="stylesheet"/>
+    <link href="/assets/css/index.css" rel="stylesheet"/>
      <!-- Bootstrap icons-->
      <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
    
@@ -16,145 +22,14 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href="/assets/css/fonts/pe-icon-7-stroke.css" rel="stylesheet">
 
-    <style>
-
-        /** back to top button **/
- #myBtn {
-  display: none; /* Hidden by default */
-  position: fixed; /* Fixed/sticky position */
-  bottom: 20px; /* Place the button at the bottom of the page */
-  right: 30px; /* Place the button 30px from the right */
-  z-index: 99; /* Make sure it does not overlap */
-  border: none; /* Remove borders */
-  outline: none; /* Remove outline */
-  cursor: pointer; /* Add a mouse pointer on hover */
-  background-color:transparent;
-}
-
-
-
-   .img-content .title {
-    margin-bottom:10px;    
-    }
-
-    img {
-    margin-bottom:10px;
-   }
-   .img-responsive{
-    border-radius:4px;
-    width:21rem; 
-    height:11rem;
-   }
-
-    .shrink img:hover {
-      opacity: 0.7;
-      cursor: pointer;
-      border-radius: 0px;
-     -webkit-transform: scale(1.2, 1.2);
-     -webkit-transition-timing-function: ease-out;
-                      -moz-transform: scale(1.2, 1.2);
-     -moz-transition-timing-function: ease-out;
-                       -ms-transform: scale(1.20, 1.20);
-      -ms-transition-timing-function: ease-out;
-
-         -webkit-transition-duration: 500ms;
-            -moz-transition-duration: 500ms;
-             -ms-transition-duration: 500ms;
-
-   }
- 
-   /** Search **/
-    
-    .search-input{
-        border:none;
-        color:white;
-        height:3.7rem;
-        
-        background-color: #343538;
-        width:15rem;
-    }  
-    input[type="text"]:focus   
-   {
-         background: #282828;
-         border: none;
-         outline-width: 0;
-
-    }
-   /**Dropdown*/
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
    
-    /** Hover Dropdown**/
-    /* Dropdown Button */
-   .dropbtn {
-      background-color: #47484D;
-      color: white;
-      padding: 16px;
-      font-size: 16px;
-      border: none;
-      height:3.7rem;
-      border-top-right-radius: 0;
-        border-bottom-right-radius: 0;   
-        border-top-left-radius:4px;
-        border-bottom-left-radius:4px;
-   }
-   .seconDropbtn {
-    background-color:transparent;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  z-index:1;
-   }
-
-/* The container <div> - needed to position the dropdown content */
-   .dropdown {
-  position: relative;
-  display: inline-block;
-   }
-
-/* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
-  display: none;
-  position: absolute;
-  color:white;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  border-radius:4px;
-
-  }
-
-/* Links inside the dropdown */
-   .dropdown-content >  a {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  }
-   body{
-        background-color:#1E2023 ;
-        color:white;
-    }
-/* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #47484D;}
-
-/* Show the dropdown menu on hover */
-   .dropdown:hover .dropdown-content {display: block;}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-   .dropdown:hover .dropbtn {background-color: #47484D;}
-
-   .navbar-fixed-top.scrolled {
-  background-color: #47484D !important;
-  transition: background-color 200ms linear;
-     }
-     .navbar-fixed-top.scrolled > search-input {
-        background:transparent;
-     }
-
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="/assets/img/up-arrow.png" style="width:34px;" /></button>
     
-    </style>
-
-<button onclick="topFunction()" id="myBtn" title="Go to top"><img src="/assets/img/up-arrow.png" style="width:34px;" /></button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
 
 </head>
 
@@ -171,7 +46,7 @@
                     <span class="icon-bar bar3"></span>
                 </button>
                 <a href="/" class="navbar-brand" >
-                    <img style="width:7rem;" src="/assets/img/logo.png">
+                    <img class="firstLogo"  src="/assets/img/logo.png">
                 </a>   
             </div>
 
@@ -181,61 +56,61 @@
               <li class="dropdown drop">
                 <a href="#" class="seconDropbtn btn-default bg-transparent dropdown-toggle search" 
                 data-toggle="dropdown" role="button" aria-expanded="false">
-                <i class="bi bi-border-all" style="padding-right:3px; color:white;"></i>
-                    All Designs <span class="caret"> </span> </a>
+                
+                <i class="bi bi-border-all" ></i>
+                   All Categories <span class="caret"> </span> </a>
                 <div class="dropdown-content" role="menu">
-                  <a href="#">Action</a>
-                  <a href="#">Another action</a>
-                  <a href="#">Something else here</a>
+                  <a href="#">PNG Pictures</a>
+                  <a href="#">Popular PSD </a>
+                  <a href="#">Illustrations</a>
+                  <a href="#">Backgrounds</a>
                 </div>
               </li>
               <li class="dropdown drop">
                 <a href="#" class="seconDropbtn btn-default bg-transparent dropdown-toggle search"
                  data-toggle="dropdown" role="button" aria-expanded="false">
-                 <i class="bi bi-palette" style="padding-right:3px; color:white;"></i>
-                  Creative Design <span class="caret"></span></a>
+                 <i class="bi bi-palette"></i>
+                  New <span class="caret"></span></a>
                 <div class="dropdown-content" role="menu">
-                  <a href="#">Action</a>
-                  <a href="#">Another action</a>
-                  <a href="#">Something else here</a>
+                  <a href="#">Pictures</a>
+                  <a href="#">Categories</a>
                 </div>
               </li>
              <li class="dropdown drop">
                  <a href="#" class="seconDropbtn btn-default bg-transparent dropdown-toggle search" 
                  data-toggle="dropdown" role="button" aria-expanded="false">
-                 <i class="bi bi-three-dots"  style="padding-right:3px; color:white;"></i>  
+                 <i class="bi bi-three-dots"></i>  
                     More<span class="caret"></span></a>
                  <div class="dropdown-content" role="menu">
-                  <a href="#">Action</a>
-                  <a href="#">Another action</a>
-                  <a href="#">Something else here</a>
+                  <a href="#">Mockups</a>
              
                  </div>
                </li>
-             </ul> 
-                <% if(!user) { %> 
+               <% if(!user) { %> 
+                <ul class="nav navbar-nav navbar-right">
+           
+                    <a href="/login" class="login"> <button class="btn" type="submit">
+                        <i class="bi bi-person"></i>
+                        Login
+                    </button>
+                    </a>
+                  </ul>
+                  <% } else { %>
                     <ul class="nav navbar-nav navbar-right">
-               
-                        <a href="/login" class="login"> <button class="btn" type="submit">
-                            <i class="bi bi-person"></i>
-                            Login
-                        </button>
-                        </a>
-                      </ul>
-                      <% } else { %>
-                        <ul class="nav navbar-nav navbar-right">
-                        <div class="dropdown">
-                            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
-                                <i class="bi bi-person"></i>  <%= user.username %>
-                            <span class="caret"></span></button>
-                            <ul class="dropdown-menu">
-                              <li><a href="/profile">Profile</a></li>
-                              <li><a href="/logout">Log out</a></li>
-                              
-                            </ul>
-                          </div>
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                            <i class="bi bi-person"></i>  <%= user.username %>
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                          <li><a href="/profile">Profile</a></li>
+                          <li><a href="/logout">Log out</a></li>
+                          
                         </ul>
-                  <% } %>
+                      </div>
+                    </ul>
+              <% } %>
+             </ul> 
+              
  
           </div>
 
@@ -253,8 +128,9 @@
                 <div class="content">
                     <div class="title-area">
                         
-                        <h2 class="title-modern">Welcome to Pixground</h2>
-                        <h4>Find Pictures, Vectors, Photographs And More... </h4>
+                        <h1 class="title" class="title-modern">Welcome to Pixground</h1>
+                        <p class="mb-title" class="title-modern">Welcome to Pixground</p>
+                        <h2 class="altTitle">Find Pictures, Vectors, Photographs And More. Download High Quality Pictures For Free. </h2>
                         <div class="separator line-separator"></div>
                         <div class="input-group">
                             
@@ -276,9 +152,8 @@
                        
                             <form action="/search" method="GET">
                               
-                               <input class="form-control search-input" style="
-                               border-top-right-radius:4px;
-                               border-bottom-right-radius: 4px;" name="result" id="query" type="text" placeholder="Search" required>
+                               <input class="form-control search-input srch" 
+                                name="result" id="query" type="text" placeholder="Search" required>
                                
                             </form> 
                         </div>
@@ -290,35 +165,39 @@
         </div>
     </div>
 
-    <div class="section section-our-team-freebie">
-       
-          <div class="container img-content">
-            <div class="row">
-                <% items.forEach(function(image) { %>
-                    
-                 <div class="col-md-3 col-sm-4 col-xs-6 shrink ">
-                    <a href="/product/<%= image.name %>" class="fancybox" rel="ligthbox">
-                    
-                    <% if(image.imgType=='image/png'){ %>
-                    <div class="badge bg-dark text-white"  
-                    style="position:absolute;top: 0.5rem; right: 1rem">  4K  </div>
-                    <% } else { %>
-                     
-                    <div> </div>
-                        <% }%>
-                    <img  class="img-responsive" 
-                    src="<%= image.profilePhotoLocation%>" />
-                </a> 
-            
-                <p> <%= image.name%></p>
-                </div>
-          <% }) %>  
-            </div>
-            
-        </div>
+  
+
+    <div class="karya" style="text-align:center;">
+      <div class="test">
+        <div class="section section-our-team-freebie">
+        <div class="container img-content" >
+          <div class="row">
+              <% items.forEach(function(image) { %>
+                  
+               <div class="col-md-3 col-sm-4 col-xs-6 shrink ">
+                  <a href="/product/<%= image.name %>" class="fancybox" rel="ligthbox">
+                  
+                  <% if(image.imgType=='image/png'){ %>
+                  <div class="badge bg-dark text-white"  
+                  style="position:absolute;top: 0.5rem; right: 1rem">  4K  </div>
+                  <% } else { %>
+                   
+                  <div> </div>
+                      <% }%>
+                  <img  class="img-responsive" 
+                  src="<%= image.profilePhotoLocation%>" />
+              </a> 
+          
+              <p> <%= image.name%></p>
+              </div>
+        <% }) %>  
+          </div>
+          </div>
+        </div> 
+      </div>
     </div>
-
-
+      
+ 
 
 
     <footer class="footer footer-big footer-color-black" data-color="black">
@@ -427,6 +306,23 @@ function topFunction() {
 }
 
 
+
+
+$(".karya div").slice(10).hide();
+
+var mincount = 10;
+var maxcount = 99999;
+
+
+$(window).scroll(function () {
+    if ($(window).scrollTop() + $(window).height() >= $(document).height() - 50) {
+        $(".karya div").slice(mincount, maxcount).slideDown(1400);
+
+        mincount = mincount + 10;
+        maxcount = maxcount + 10
+
+    }
+});
 </script>
 </body>
 

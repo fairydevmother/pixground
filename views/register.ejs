@@ -3,7 +3,7 @@
 <head>
 	<%- include('partials/head'); %>
   
-	<title>Registration</title>
+	<title>Sign Up And Join Us Today</title>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 	</script>
@@ -25,16 +25,15 @@
 				<form action="/register" id="form1" method="post" name="Login_Form" class="form-signin">       
 					<h3 class="form-signin-heading">Welcome! Please Sign In</h3>
 					  <hr class="colorgraph"><br>
-					  
-				<input type="email" name="email" placeholder="E-mail" required="" class="form-control"><br/>
-						
-						<input id="username" name="username" type="text" placeholder="Username" class="form-control" required>
-						<input id="new-password" name="password" type="password" placeholder="Password"  required>
+					
+					<input id="username" name="username" type="text" placeholder="Username" class="form-control" required> 
+			      	<input type="email" name="email" placeholder="E-mail" required="" class="form-control">
+					<input id="new-password" name="password" type="password" placeholder="Password" class="form-control"  required>
 						
 						
 						<input type="hidden" name="_csrf" value="<%= csrfToken %>">
 				    <button type="submit" value="Register" class="btn btn-success">Sign up</button>
-				
+				 <br>
 				<div class="mssg bg-danger">
 				  <span id="check"></span>
 				</div>

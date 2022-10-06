@@ -1,0 +1,145 @@
+    /** back to top button **/
+    #myBtn {
+        display: none; /* Hidden by default */
+        position: fixed; /* Fixed/sticky position */
+        bottom: 20px; /* Place the button at the bottom of the page */
+        right: 30px; /* Place the button 30px from the right */
+        z-index: 99; /* Make sure it does not overlap */
+        border: none; /* Remove borders */
+        outline: none; /* Remove outline */
+        cursor: pointer; /* Add a mouse pointer on hover */
+        background-color:transparent;
+      }
+      
+      
+      
+         .img-content .title {
+          margin-bottom:10px;    
+          }
+      
+          img {
+          margin-bottom:10px;
+         }
+         .img-responsive{
+          border-radius:4px;
+          width:21rem; 
+          height:11rem;
+         }
+      
+          .shrink img:hover {
+            opacity: 0.7;
+            cursor: pointer;
+            border-radius: 0px;
+           -webkit-transform: scale(1.2, 1.2);
+           -webkit-transition-timing-function: ease-out;
+                            -moz-transform: scale(1.2, 1.2);
+           -moz-transition-timing-function: ease-out;
+                             -ms-transform: scale(1.20, 1.20);
+            -ms-transition-timing-function: ease-out;
+      
+               -webkit-transition-duration: 500ms;
+                  -moz-transition-duration: 500ms;
+                   -ms-transition-duration: 500ms;
+      
+         }
+       
+         /** Search **/
+          
+          .search-input{
+              border:none;
+              color:white;
+              height:3.7rem;
+              
+              background-color: #343538;
+              width:15rem;
+          }  
+          input[type="text"]:focus   
+         {
+               background: #282828;
+               border: none;
+               outline-width: 0;
+      
+          }
+         /**Dropdown*/
+         
+          /** Hover Dropdown**/
+          /* Dropdown Button */
+         .dropbtn {
+            background-color: #47484D;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            height:3.7rem;
+            border-top-right-radius: 0;
+              border-bottom-right-radius: 0;   
+              border-top-left-radius:4px;
+              border-bottom-left-radius:4px;
+         }
+         .seconDropbtn {
+          background-color:transparent;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        z-index:1;
+         }
+      
+      /* The container <div> - needed to position the dropdown content */
+         .dropdown {
+        position: relative;
+        display: inline-block;
+         }
+      
+      /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+        display: none;
+        position: absolute;
+        color:white;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-radius:4px;
+      
+        }
+      
+      /* Links inside the dropdown */
+         .dropdown-content >  a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        }
+         body{
+              background-color:#1E2023 ;
+              color:white;
+          }
+      /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {background-color: #47484D;}
+      
+      /* Show the dropdown menu on hover */
+         .dropdown:hover .dropdown-content {display: block;}
+      
+      /* Change the background color of the dropdown button when the dropdown content is shown */
+         .dropdown:hover .dropbtn {background-color: #47484D;}
+      
+         .navbar-fixed-top.scrolled {
+        background-color: #47484D !important;
+        transition: background-color 200ms linear;
+           }
+           .navbar-fixed-top.scrolled > search-input {
+              background:transparent;
+           }
+      
+    .firstLogo {
+        width:7rem;
+    }      
+
+    .bi {
+        padding-right:3px; color:white;
+
+    }
+    .srch{
+        border-top-right-radius:4px;
+        border-bottom-right-radius: 4px;
+    }

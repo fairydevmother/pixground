@@ -128,6 +128,7 @@ function fetchProducts(req,res,next) {
 
 
 
+
 app.get('/sitemap.xml', generate_sitemap);
 app.use(function(req,res,next){
 if (req.user) {
