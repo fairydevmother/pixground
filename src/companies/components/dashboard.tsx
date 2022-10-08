@@ -4,7 +4,8 @@ import { Label, Box, DropZone, BasePropertyProps, DropZoneProps, DropZoneItem } 
 const Dashboard = () => {
   return (
     <Box marginBottom="xxl">
-      <Label>Welcome to Pixground</Label>
+      <Label>Welcome Ferdal Karaman</Label>
+      
        <p>Pixground Admin Panel</p>
     </Box>
   )

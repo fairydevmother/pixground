@@ -168,22 +168,22 @@ background-color:rgba(0,0,0,0.7);
 }
 
 #gallery-item h2 {
-font-size:17px;
+font-size:14px;
 margin-top:0;
 }
 
 #gallery-item img {
-padding:7px;   
+padding:4px;   
 background-color: rgba(0,0,0,0.28);
 }
 .img-responsive{
 margin-top:1rem;
-width:60rem;
+width:55rem;
 }
 @media(max-width:767px){
 .img-responsive{
     width:28rem;
-    padding:8px;
+    padding:4px;
 }
 }
 .grey{

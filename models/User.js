@@ -9,7 +9,7 @@ const userSchema = new Schema( {
 	profilePhotoLocation:String,
 	username: String,
 	password: String,
-	passwordConf: String
+	passwordConf: String,
 });
 
 userSchema.plugin(passportLocalMongoose);

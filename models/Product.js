@@ -17,6 +17,9 @@ const ProductSchema = new Schema(
         imgType: {
             type: String,
         },
+        desc: {
+            type:String,
+        }
     },
   
   { timestamps: true },

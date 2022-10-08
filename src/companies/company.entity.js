@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const TagSchema = new mongoose.Schema({ name: String });
 
 const CompanySchema = new mongoose.Schema({
+  
   name: {
     type: String,
     required: true,
@@ -23,9 +24,14 @@ const CompanySchema = new mongoose.Schema({
     type: String
   },
   tags:[String],
+  category: {
+    type: String
+  },
 
 },
-{ versionKey: false });
+{ versionKey: false },
+{ timestamps: true },
+{ collection: 'products'});
 
 const Company = mongoose.model('Company', CompanySchema);
 

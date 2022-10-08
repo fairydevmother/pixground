@@ -2,20 +2,30 @@
 <html lang="en">
 <head>
   <%- include('partials/head'); %>
-   <title> <%= image.name %> | Download Now</title>
+   <title> <%= image.name %> | Download Image Now</title>
 
+   
   <style>
-	
+	.fa {
+  font-size: 50px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.fa:hover {
+  color: darkblue;
+}
+
+
   </style>
   <link href="/assets/css/product.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
 <header>
   <%- include('partials/header'); %>
 </header>
-
-<button onclick="topFunction()" id="myBtn" title="Go to top"><img src="/assets/img/up-arrow.png" style="width:34px;" /></button>
 
 
 <main>
@@ -51,17 +61,18 @@
 					</a> 
 
 
-					<a href="https://twitter.com/intent/tweet?url=/product/<%=image.name%>" style=" padding:10px;width:50px;">
+					<a href="https://twitter.com/intent/tweet?url=pixground.com/product/<%=image.name%>" style=" padding:10px;width:50px;">
 						<img width="50px" style="border-radius:4px;" src="/img/twitter.png" /> 
 					  </a>
 					  <a href="javascript:;" style="padding:10px;width:50px;" >
-						<img width="50px" style="border-radius:4px;" src="/img/heart.png" />
+						<img width="50px" style="border-radius:4px;" class="like" src="/assets/img/heart.png" />
+            
 					</a>
 
 				</div>
 				<div class="boxTwo">	
                    <ul class="list-unstyled">
-                        <li>Description : <%=image.desc%></li>
+                        <li>Description : <%=image.description%></li>
                         <li>Image Type : <%= image.imgType%></li>
                         <li>Resolution : <%= image.resolution%></li>
                     </ul>
@@ -99,17 +110,18 @@
 
 
 					<a href="https://twitter.com/intent/tweet?url=/product/<%=image.name%>" style=" padding:10px;width:50px;">
-						<img width="50px" style="border-radius:4px;" src="/img/twitter.png" /> 
+						<img width="50px" style="border-radius:4px;" src="/assets/img/twitter.png" /> 
 					  </a>
 					  <a href="javascript:;" style="padding:10px;width:50px;" >
 						<i  onclick="myFunction(this)" class="bi bi-heart"></i>
-						<img width="50px" style="border-radius:4px;" src="/img/heart.png" />
+						<img width="50px" style="border-radius:4px;" class="like" src="/assets/img/heart.png" />
+            
 					</a>
 
 				</div>
 				<div class="boxTwo">	
                    <ul class="list-unstyled">
-                        <li>Description : <%=image.desc%></li>
+                        <li>Description : <%=image.description%></li>
                         <li>Image Type : <%= image.imgType%></li>
                         <li>Resolution : <%= image.resolution%></li>
                     </ul>
@@ -127,14 +139,47 @@
   <% }%>
 
 
+ 
+      <div class="section section-our-team-freebie">
+      <div class="container img-content" >
+        <h3>Related Searches</h3>
+        <div style="text-align:center;" class="row">
+          
+            <% items.forEach(function(image) { %>
+                
+             <div class="col-md-3 col-sm-4 col-xs-6 shrink ">
+                <a href="/product/<%= image.name %>" class="fancybox" rel="ligthbox">
+                
+                <% if(image.imgType=='image/png'){ %>
+                <div class="badge bg-dark text-white"  
+                style="position:absolute;top: 0.5rem; right: 1rem">  4K  </div>
+                <% } else { %>
+                 
+                <div> </div>
+                    <% }%>
+                <img title="<%=image.name %>"  class="img-responsive"  alt="<%= image.description %>"
+                src="<%= image.profilePhotoLocation%>" />
+            </a> 
+        
+            <p> <%= image.name%> </p>
+            </div>
+      <% }) %>  
+        </div>
+        </div>
+      </div> 
+   
+    
+
+
+
+
 </main>
 
 
 
-
-      <footer>
-        <%- include('partials/footer'); %>
-      </footer>
+<footer>
+   <%- include('partials/footer'); %>
+</footer>
       
 
  
@@ -142,8 +187,9 @@
   <script>
     
    function myFunction(x) {
-  x.classList.toggle("heart-fill");
+  x.classList.toggle("fa-thumbs-down");
    }
+
 
   
 
@@ -161,6 +207,9 @@
 		$(this).removeClass('transition');
 	});
    });
+
+
+
   </script>
  
    

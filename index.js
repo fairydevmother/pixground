@@ -124,7 +124,8 @@ function fetchProducts(req,res,next) {
     }
     })
 
-}
+};
+
 
 
 
@@ -249,27 +250,50 @@ app.post('/forgetpass', function (req, res, next) {
 
 app.get("/search", async (req,res)=>{
 	const tag=req.query.result;
-	Product.find({tags:tag}, function(err,products){
-	  if(err){
-		console.log(err);
-	  }
-	  else{
-		res.render("search",{products:products});
-	  }
-	});
-});
-
-
-app.get("/product/:name", function(req,res) { 
-	const requestedImgName = req.params.name;
-   
+	Product.find({Tags: { $elemMatch: { $eq: tag } }},function (err,products){
+		if(err){
+			console.log(err);
+		  }
+		  else{
+			res.render("search",{products:products});
+		  }
+	})
 	
-   Product.findOne({name: requestedImgName}, function(err, image){
-  
-	res.render("product", {image:image});
-  
-	  });
+	
 });
+
+
+function getRelated(data, callback) {
+   
+}
+
+app.get("/product/:name", function(req,res, next) { 
+
+
+	const requestedImgName = req.params.name;
+	
+  
+     Product.findOne({name: requestedImgName}, function(err, image){
+
+	    const category= image.category;
+		console.log(category);
+		Product.find({category:category}).limit(4).sort({"name":0}).then(items=>{
+			if(!items){
+				const error=new Error("No img is there to fetch");
+				error.statusCode=404;
+				throw(error);
+			}
+			
+			return res.render('product', {
+				items:items, image:image
+			 });
+		}).catch(err=>console.log(err));
+		
+			  
+	});
+})
+
+
 
 app.get("/contact", function (req, res) {
 	Footer.find({}, (err, items) => {

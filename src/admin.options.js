@@ -21,7 +21,8 @@ const options = {
   branding: {
     companyName: 'Pixground',
     softwareBrothers: false,
-    logo: false, // OR false to hide the default one
+    logo: '/assets/img/logo.png', 
+    favicon: '/assets/img/favicon.ico' // OR false to hide the default one
    },
   locale: {
     translations: {
