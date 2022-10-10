@@ -143,3 +143,21 @@
         border-top-right-radius:4px;
         border-bottom-right-radius: 4px;
     }
+
+ @media only screen and (min-width: 992px) and (max-width: 1100px){
+  .login{
+    padding-left:14rem;
+   }
+ 
+}
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+  .login{
+    padding-left:21rem;
+   }
+   
+}
+@media(min-width:1200px){
+  .login{
+    padding-left:32rem;
+   }
+}
