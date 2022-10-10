@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <%- include('partials/head'); %>
-   <title> Search Results |</title>
+   <title> Search Results for <%=tag%></title>
     
   <style>
     body{
@@ -66,21 +66,7 @@
 <script>
   
 
-$(".karya div").slice(4).hide();
 
-var mincount = 4;
-var maxcount = 99999;
-
-
-$(window).scroll(function () {
-    if ($(window).scrollTop() + $(window).height() >= $(document).height() - 50) {
-        $(".karya div").slice(mincount, maxcount).slideDown(1400);
-
-        mincount = mincount + 10;
-        maxcount = maxcount + 10
-
-    }
-});
 </script>
 
 </body>

@@ -114,6 +114,7 @@ app.use(function(req, res, next) {
 
 /** GET PHOTOS FROM DB */
 function fetchProducts(req,res,next) {
+	
   Product.find({}, (err, items) => {
     if (err) {
       console.log(err);
@@ -249,23 +250,24 @@ app.post('/forgetpass', function (req, res, next) {
 
 
 app.get("/search", async (req,res)=>{
-	const tag=req.query.result;
-	Product.find({Tags: { $elemMatch: { $eq: tag } }},function (err,products){
+	const search=req.query.result;
+
+	let regex = new RegExp(`^[${search}0-9._-]+$`, "ig");
+
+	
+	Product.find({tags:{'$regex':regex}},function (err,products){
 		if(err){
 			console.log(err);
 		  }
 		  else{
-			res.render("search",{products:products});
+			res.render("search",{products:products,tag:search});
 		  }
 	})
+
 	
 	
 });
 
-
-function getRelated(data, callback) {
-   
-}
 
 app.get("/product/:name", function(req,res, next) { 
 
@@ -277,7 +279,7 @@ app.get("/product/:name", function(req,res, next) {
 
 	    const category= image.category;
 		console.log(category);
-		Product.find({category:category}).limit(4).sort({"name":0}).then(items=>{
+		Product.find({category:category}).limit(4).sort({"name":-1}).then(items=>{
 			if(!items){
 				const error=new Error("No img is there to fetch");
 				error.statusCode=404;

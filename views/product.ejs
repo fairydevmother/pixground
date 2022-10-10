@@ -20,9 +20,10 @@
   </style>
   <link href="/assets/css/product.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
-
+ 
 <header>
   <%- include('partials/header'); %>
 </header>
@@ -51,30 +52,37 @@
               <img src="<%= image.profilePhotoLocation %>" class="img-responsive" alt="">
              
 			</div>
+      
             <div class="col-sm-4">
                
-                <div class="box">
+           <div class="box" >
 		
-					<a class="btn" id="downloadImage" style="width:11rem;" href="<%= image.profilePhotoLocation %>"  download="<% image.address%>"rel="nofollow" onclick="_reg()" 
+					<a class="btn" id="downloadImage"href="<%= image.profilePhotoLocation %>"  download="<% image.address%>"rel="nofollow" onclick="_reg()" 
 						class="block-gradient graHover dlbtn ga-click cate-5" data-ga-type="button" data-ga-label="5" > 
 						<i class="bi bi-download" ></i>    Download
 					</a> 
-
-
-					<a href="https://twitter.com/intent/tweet?url=pixground.com/product/<%=image.name%>" style=" padding:10px;width:50px;">
-						<img width="50px" style="border-radius:4px;" src="/img/twitter.png" /> 
-					  </a>
-					  <a href="javascript:;" style="padding:10px;width:50px;" >
-						<img width="50px" style="border-radius:4px;" class="like" src="/assets/img/heart.png" />
-            
-					</a>
-
+          
+           
 				</div>
+        <div class="boxTwo"> <!-- AddToAny BEGIN -->
+          <div style="padding-top:3%;padding-left:22%" class="a2a_kit a2a_kit_size_50 a2a_default_style" >
+            <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+            <button class="like__btn">
+              <span id="icon"><img width="23px"  src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png" /></span>
+              <span id="count">0</span> Like
+           </button>
+           
+        </div>
+         <script async src="https://static.addtoany.com/menu/page.js"></script>
+         <!-- AddToAny END -->
+       </div>
 				<div class="boxTwo">	
                    <ul class="list-unstyled">
-                        <li>Description : <%=image.description%></li>
-                        <li>Image Type : <%= image.imgType%></li>
-                        <li>Resolution : <%= image.resolution%></li>
+                    
+                        <li>Description:                  <%=image.description%></li>
+                        <li>Image Type :                  <%= image.imgType%></li>
+                        <li>Resolution :                  <%= image.resolution%></li>
+                     
                     </ul>
 
 					<a class="fancybox" class="btn btn-normal show-image" rel="chimps" href="<%=image.profilePhotoLocation%>">Full Size</a>
@@ -82,7 +90,39 @@
                 </div>
 				
             </div>
+            
         </div>
+        
+      
+        <div class="container img-content" style="top:5px;" >
+          <h3>Related Searches</h3>
+          <div style="text-align:center;" class="row">
+            
+              <% items.forEach(function(image) { %>
+                  
+               <div class="col-md-2 col-sm-4 col-xs-6 shrink ">
+                  <a href="/product/<%= image.name %>" class="fancybox" rel="ligthbox">
+                  
+                  <% if(image.imgType=='image/png'){ %>
+                  <div class="badge bg-dark text-white"  
+                  style="position:absolute;top: 0.5rem; right: 1rem">  4K  </div>
+                  <% } else { %>
+                   
+                  <div> </div>
+                      <% }%>
+                  <img title="<%=image.name %>"  class="imgs"  alt="<%= image.description %>"
+                  src="<%= image.profilePhotoLocation%>" />
+              </a> 
+          
+              <p> <%= image.name%> </p>
+              </div>
+          <% }) %>  
+          </div>
+        </div>
+        
+     
+      
+  
     </div>
   </section>
   <% }  else { %>
@@ -91,7 +131,7 @@
    <section class="content-item grey" style="padding-top:5.5rem;padding-bottom:10rem;" id="gallery-item">
     <div class="container">
       <div class="row">
-          <div class="col-sm-8" >
+       <div class="col-sm-8" >
 			 
 			   <h2><%=image.name%></h2>
 			   
@@ -99,26 +139,31 @@
               <img src="<%= image.profilePhotoLocation %>" class="img-responsive" alt="">
              
 			</div>
-            <div class="col-sm-4">
-               
-                <div class="unbox">
-		
-					<a class="btn" id="downloadImage" style="width:11rem;" href="<%= image.profilePhotoLocation %>"  download="<% image.address%>"rel="nofollow" onclick="_reg()" 
-						class="block-gradient graHover dlbtn ga-click cate-5" data-ga-type="button" data-ga-label="5" > 
-						<i class="bi bi-download" ></i>    Download
-					</a> 
-
-
-					<a href="https://twitter.com/intent/tweet?url=/product/<%=image.name%>" style=" padding:10px;width:50px;">
-						<img width="50px" style="border-radius:4px;" src="/assets/img/twitter.png" /> 
-					  </a>
-					  <a href="javascript:;" style="padding:10px;width:50px;" >
-						<i  onclick="myFunction(this)" class="bi bi-heart"></i>
-						<img width="50px" style="border-radius:4px;" class="like" src="/assets/img/heart.png" />
+      
+             
+          <div class="col-sm-4">
+                 
+             <div class="box" >
+      
+            <a class="btn" id="downloadImage"href="<%= image.profilePhotoLocation %>"  download="<% image.address%>"rel="nofollow" onclick="_reg()" 
+              class="block-gradient graHover dlbtn ga-click cate-5" data-ga-type="button" data-ga-label="5" > 
+              <i class="bi bi-download" ></i>    Download
+            </a> 
             
-					</a>
-
-				</div>
+             
+          </div>
+          <div class="boxTwo"> <!-- AddToAny BEGIN -->
+            <div style="padding-top:3%;padding-left:22%" class="a2a_kit a2a_kit_size_50 a2a_default_style" >
+              <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+              <button class="like__btn">
+                <span id="icon"><img width="23px"  src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png" /></span>
+                <span id="count">0</span> Like
+             </button>
+             
+          </div>
+           <script async src="https://static.addtoany.com/menu/page.js"></script>
+           <!-- AddToAny END -->
+         </div>
 				<div class="boxTwo">	
                    <ul class="list-unstyled">
                         <li>Description : <%=image.description%></li>
@@ -131,7 +176,38 @@
                 </div>
 				
             </div>
+            
         </div>
+       
+        <div class="container img-content" style="top:5px;" >
+          <h3>Related Searches</h3>
+          <div style="text-align:center;" class="row">
+            
+              <% items.forEach(function(image) { %>
+                  
+               <div class="col-md-2 col-sm-4 col-xs-6 shrink ">
+                  <a href="/product/<%= image.name %>" class="fancybox" rel="ligthbox">
+                  
+                  <% if(image.imgType=='image/png'){ %>
+                  <div class="badge bg-dark text-white"  
+                  style="position:absolute;top: 0.5rem; right: 1rem">  4K  </div>
+                  <% } else { %>
+                   
+                  <div> </div>
+                      <% }%>
+                  <img title="<%=image.name %>"  class="imgs"  alt="<%= image.description %>"
+                  src="<%= image.profilePhotoLocation%>" />
+              </a> 
+          
+              <p> <%= image.name%> </p>
+              </div>
+          <% }) %>  
+          </div>
+        </div>
+        
+     
+     
+        
     </div>
   </section>
 
@@ -140,36 +216,6 @@
 
 
  
-      <div class="section section-our-team-freebie">
-      <div class="container img-content" >
-        <h3>Related Searches</h3>
-        <div style="text-align:center;" class="row">
-          
-            <% items.forEach(function(image) { %>
-                
-             <div class="col-md-3 col-sm-4 col-xs-6 shrink ">
-                <a href="/product/<%= image.name %>" class="fancybox" rel="ligthbox">
-                
-                <% if(image.imgType=='image/png'){ %>
-                <div class="badge bg-dark text-white"  
-                style="position:absolute;top: 0.5rem; right: 1rem">  4K  </div>
-                <% } else { %>
-                 
-                <div> </div>
-                    <% }%>
-                <img title="<%=image.name %>"  class="img-responsive"  alt="<%= image.description %>"
-                src="<%= image.profilePhotoLocation%>" />
-            </a> 
-        
-            <p> <%= image.name%> </p>
-            </div>
-      <% }) %>  
-        </div>
-        </div>
-      </div> 
-   
-    
-
 
 
 
@@ -208,7 +254,31 @@
 	});
    });
 
+   var a2a_config = a2a_config || {};
+  a2a_config.onclick = false;
+  a2a_config.color_bg = "#47484D";
+  a2a_config.icon_color = "seashell,midnightblue";
 
+
+
+  const likeBtn = document.querySelector(".like__btn");
+let likeIcon = document.querySelector("#icon"),
+  count = document.querySelector("#count");
+
+let clicked = false;
+
+
+likeBtn.addEventListener("click", () => {
+  if (!clicked) {
+    clicked = true;
+    likeIcon.innerHTML = `<img width="23px"  src="https://cdn-icons-png.flaticon.com/512/210/210545.png"/>`;
+    count.textContent++;
+  } else {
+    clicked = false;
+    likeIcon.innerHTML = `<img width="23px" src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png" />`;
+    count.textContent--;
+  }
+});
 
   </script>
  

@@ -67,7 +67,7 @@
         <% if(!user) { %> 
           <ul class="nav navbar-nav navbar-right">
      
-              <a href="/login" > <button class="btn" type="submit">
+              <a href="/login" class="login"> <button class="btn" type="submit">
                   <i class="bi bi-person"></i>
                   Login
               </button>
@@ -75,7 +75,7 @@
             </ul>
             <% } else { %>
               <ul class="nav navbar-nav navbar-right">
-              <div class="dropdown">
+              <div class="dropdown login">
                   <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
                       <i class="bi bi-person"></i>  <%= user.username %>
                   <span class="caret"></span></button>
@@ -87,7 +87,7 @@
                 </div>
               </ul>
         <% } %>
-            </ul>
+       </ul> 
 
      
        

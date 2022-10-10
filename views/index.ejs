@@ -117,7 +117,7 @@
                   </ul>
                   <% } else { %>
                     <ul class="nav navbar-nav navbar-right">
-                    <div class="dropdown">
+                    <div class="dropdown login">
                         <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
                             <i class="bi bi-person"></i>  <%= user.username %>
                         <span class="caret"></span></button>
@@ -185,11 +185,13 @@
         </div>
     </div>
 
+
   
 
     <div class="karya" style="text-align:center;">
+      <img src="/assets/img/scroll.png" width="80px" />
       <div class="test">
-        <div class="section section-our-team-freebie">
+       
         <div class="container img-content" >
           <div class="row">
               <% items.forEach(function(image) { %>
@@ -213,7 +215,7 @@
         <% }) %>  
           </div>
           </div>
-        </div> 
+       
       </div>
     </div>
       
@@ -331,7 +333,7 @@ function topFunction() {
 $(".karya div").slice(10).hide();
 
 var mincount = 10;
-var maxcount = 99999;
+var maxcount = 999999;
 
 
 $(window).scroll(function () {

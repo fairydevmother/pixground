@@ -23,6 +23,8 @@ const generate_sitemap = async (req, res, next) => {
       { url: 'contact', changefreq },
       { url: 'chance-password', changefreq },
       { url: 'search', changefreq },
+      { url: 'profile', changefreq },
+      { url: 'error', changefreq },
     ];
 
     // Additionally, you can do database query and add more dynamic URLs to the "links" array.
