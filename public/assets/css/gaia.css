@@ -3810,8 +3810,13 @@ body {
   }
 }
 
+.img-content{
+top:5px;
+
+}
 .img-content .title {
-margin-bottom:10px;    
+margin-bottom:10px; 
+
 }
 
 img {
