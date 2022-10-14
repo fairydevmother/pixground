@@ -1,4 +1,6 @@
+    
     /** back to top button **/
+    
     #myBtn {
         display: none; /* Hidden by default */
         position: fixed; /* Fixed/sticky position */
@@ -46,12 +48,13 @@
          /** Search **/
           
           .search-input{
-              border:none;
               color:white;
               height:3.7rem;
+              border-top-right-radius: 4px;
+              border-bottom-right-radius: 4px;   
               
               background-color: #343538;
-              width:15rem;
+              width:14rem;
           }  
           input[type="text"]:focus   
          {
@@ -97,7 +100,7 @@
         position: absolute;
         color:white;
         min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        background-color:#2E2E2E;
         z-index: 1;
         border-radius:4px;
       
@@ -144,20 +147,22 @@
         border-bottom-right-radius: 4px;
     }
 
- @media only screen and (min-width: 992px) and (max-width: 1100px){
-  .login{
-    padding-left:14rem;
-   }
- 
-}
-@media only screen and (min-width: 1000px) and (max-width: 1200px) {
-  .login{
-    padding-left:21rem;
-   }
-   
-}
-@media(min-width:1200px){
-  .login{
-    padding-left:32rem;
-   }
-}
+
+  .navbar-custom{
+   height:5rem;
+  }
+
+  #header-img{
+   background-size: cover;
+   background-position: center center;
+   background-repeat: no-repeat;
+   height:28.125rem;
+   background-image: url('/assets/img/header-1.jpeg');
+  }
+
+  #contr{
+   height:28.125rem;
+  }
+  .fourK{
+   position:absolute;top: 0.5rem; right: 1rem
+  }

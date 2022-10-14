@@ -150,6 +150,13 @@ app.get('/',fetchProducts, function(req, res, next) {
 
 
 
+app.get('/categories', function(req, res, next) {
+  res.render('categories');
+});
+app.post("categories",function(req,res, next){
+
+	
+})
 
 
 app.get('/register', function(req, res, next) {
