@@ -9,6 +9,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-size: 100%;
+  height:100%;
   
 }
 @media (min-width: 58em) {
@@ -1577,6 +1578,11 @@ a,
   line-height: 20px;
   /*border-top: 1px solid #DDDDDD;*/
   overflow: hidden;
+  
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0; 
 }
 .footer nav > ul {
   list-style: none;
