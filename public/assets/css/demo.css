@@ -29,6 +29,7 @@
     background-color: #FFFFFF;
 /*     position: relative; */
 
+
 }
 .navigation-example{
     height: 360px;
@@ -43,9 +44,6 @@
     display: block;
     width: 100%;
     position: relative;
-}
-.tim-note{
-    text-transform: capitalize;
 }
 
 .footer-card{

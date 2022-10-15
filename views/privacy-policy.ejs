@@ -24,7 +24,7 @@
 <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="/assets/img/up-arrow.png" style="width:34px;" /></button>
 
 
-<main>
+<main style="height:70rem;">
     <% items.forEach(function(item) { %>
     <section class="vh-100" style="padding-top:70px;">
         <div style="width:100%; text-align:center;">
@@ -41,6 +41,8 @@
 </main>
 
 
-<script language="javascript" type="text/javascript"  src="./partials/footer.js"></script>
+<footer >
+  <%- include('partials/footer'); %>
+</footer>
 </body>
 </html>
