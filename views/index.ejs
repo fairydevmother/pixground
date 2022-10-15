@@ -26,7 +26,7 @@
       "logo": "/assets/img/logo.png"
     }
   </script>
-  
+
     <!--     Fonts and icons     -->
     <link href='https://fonts.googleapis.com/css?family=Cambo|Poppins:400,600' rel='stylesheet' type='text/css'>
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
@@ -57,223 +57,227 @@
 <body>
 
 
-
-
+<div id="pageContainer">
+    
+      <div class="pageContent">
+        
     <nav class="navbar navbar-custom navbar-transparent navbar-fixed-top section-header"  >
-      <!-- if you want to keep the navbar hidden you can add this class to the navbar "navbar-burger"-->
-      <div class="container">
-          <div class="navbar-header" >
-              <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar bar1"></span>
-                  <span class="icon-bar bar2"></span>
-                  <span class="icon-bar bar3"></span>
-              </button>
-              <a href="/" class="navbar-brand" >
-                  <img class="firstLogo" alt="pixground-logo" title="pixground" src="/assets/img/logo.png">
-              </a>   
-          </div>
-
-          <!-- Collect the nav links, forms, and other content for toggling -->
-         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="dropdown drop">
-              <a href="#" class="seconDropbtn btn-default dropdown-toggle search" 
-              data-toggle="dropdown" role="button" aria-expanded="false">
-              
-              <i class="bi bi-border-all" ></i>
-                 All Categories </a>
-              <div class="dropdown-content" role="menu">
-                <a href="#">Templates</a>
-                <a href="#">PNG Images</a>
-                <a href="#">Backgrounds</a>
-              </div>
-            </li>
-            <li class="dropdown drop">
-              <a href="#" class="seconDropbtn btn-default dropdown-toggle search"
-               data-toggle="dropdown" role="button" aria-expanded="false">
-               <i class="bi bi-palette"></i>
-                Creative Design</a>
-             
-            </li>
-           
-            </ul> 
-             <% if(!user) { %> 
-              <ul class="nav navbar-nav navbar-right">
-         
-                  <a href="/login" class="login"> <button class="btn" type="submit">
-                      <i class="bi bi-person"></i>
-                      Login
-                  </button>
-                  </a>
-                </ul>
-                <% } else { %>
-                  <ul class="nav navbar-nav navbar-right">
-                  <div class="dropdown login">
-                      <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
-                          <i class="bi bi-person"></i>  <%= user.username %>
-                      <span class="caret"></span></button>
-                      <ul class="dropdown-menu">
-                        <li><a href="/profile">Profile</a></li>
-                        <li><a href="/logout">Log out</a></li>
-                        
-                      </ul>
-                    </div>
-                  </ul>
-            <% } %>
-           
-            
-
-        </div>
-
-
-          
-      </div>
-  </nav>
+        <!-- if you want to keep the navbar hidden you can add this class to the navbar "navbar-burger"-->
+        <div class="container">
+            <div class="navbar-header" >
+                <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar bar1"></span>
+                    <span class="icon-bar bar2"></span>
+                    <span class="icon-bar bar3"></span>
+                </button>
+                <a href="/" class="navbar-brand" >
+                    <img class="firstLogo" alt="pixground-logo" title="pixground" src="/assets/img/logo.png">
+                </a>   
+            </div>
   
-  <header>
-  <div class="section section-header" >
-      <div class="parallax filter filter-color-red " id="header-img" >
-         
-          <div id="contr" class="container ">
-              <div class="content">
-                  <div class="title-area">
-                      
-                      <h1 class="title title-modern" >Welcome to Pixground</h1>
-                      <p class="mb-title">Welcome to Pixground</p>
-                      <h4 class="altTitle">Find Pictures, Vectors, Photographs And More. Download High Quality Pictures For Free. </h4>
-                     
-                      <div class="input-group">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="dropdown drop">
+                <a href="#" class="seconDropbtn btn-default dropdown-toggle search" 
+                data-toggle="dropdown" role="button" aria-expanded="false">
+                
+                <i class="bi bi-border-all" ></i>
+                   All Categories </a>
+                <div class="dropdown-content" role="menu">
+                  <a href="#">Templates</a>
+                  <a href="#">PNG Images</a>
+                  <a href="#">Backgrounds</a>
+                </div>
+              </li>
+              <li class="dropdown drop">
+                <a href="#" class="seconDropbtn btn-default dropdown-toggle search"
+                 data-toggle="dropdown" role="button" aria-expanded="false">
+                 <i class="bi bi-palette"></i>
+                  Creative Design</a>
+               
+              </li>
+             
+              </ul> 
+               <% if(!user) { %> 
+                <ul class="nav navbar-nav navbar-right">
+           
+                    <a href="/login" class="login"> <button class="btn" type="submit">
+                        <i class="bi bi-person"></i>
+                        Login
+                    </button>
+                    </a>
+                  </ul>
+                  <% } else { %>
+                    <ul class="nav navbar-nav navbar-right">
+                    <div class="dropdown login">
+                        <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                            <i class="bi bi-person"></i>  <%= user.username %>
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                          <li><a href="/profile">Profile</a></li>
+                          <li><a href="/logout">Log out</a></li>
                           
-                          <div class="input-group-btn search-panel">
+                        </ul>
+                      </div>
+                    </ul>
+              <% } %>
+             
+              
+  
+          </div>
+  
+  
+            
+        </div>
+    </nav>
+    
+    <header>
+    <div class="section section-header" >
+        <div class="parallax filter filter-color-red " id="header-img" >
+           
+            <div id="contr" class="container ">
+                <div class="content">
+                    <div class="title-area">
+                        
+                        <h1 class="title title-modern" >Welcome to Pixground</h1>
+                        <p class="mb-title">Welcome to Pixground</p>
+                        <h4 class="altTitle">Find Pictures, Vectors, Photographs And More. Download High Quality Pictures For Free. </h4>
                        
-                             
-                              <div class="dropdown ">
-                                  <button type="button" class="dropbtn btn-default dropdown-toggle search">All Designs</button>
-                                  <div class="dropdown-content">
-                                    <a href="/">Creative Design</a>
-                                     <li class="list"> All Design</li> 
-                                     <li class="list"> Templates</li> 
-                                    <a href="/">Photography</a>
-                                        <li class="list" href="/">All Categories</li>
-                                  </div>
-                                </div>
-                              
-                          </div>
-                     
-                          <form action="/search" method="GET">
+                        <div class="input-group">
                             
-                             <input class="form-control search-input srch" 
-                              name="result" id="query" type="text" placeholder="Search" required>
+                            <div class="input-group-btn search-panel">
+                         
+                               
+                                <div class="dropdown ">
+                                    <button type="button" class="dropbtn btn-default dropdown-toggle search">All Designs</button>
+                                    <div class="dropdown-content">
+                                      <a href="/">Creative Design</a>
+                                       <li class="list"> All Design</li> 
+                                       <li class="list"> Templates</li> 
+                                      <a href="/">Photography</a>
+                                          <li class="list" href="/">All Categories</li>
+                                    </div>
+                                  </div>
+                                
+                            </div>
+                       
+                            <form action="/search" method="GET">
                               
-                          </form> 
+                               <input class="form-control search-input srch" 
+                                name="result" id="query" type="text" placeholder="Search" required>
+                                
+                            </form> 
+                        </div>
+                    </div>
+  
+                </div>
+  
+            </div>
+        </div>
+    </div>
+     </header>
+    
+  
+  
+    
+  
+     <main >
+       <div class="karya" >
+        
+        <div class="test">
+         
+          <div class="container img-content" >
+            <div class="row">
+                <% items.forEach(function(image) { %>
+                    
+                 <div class="col-md-3 col-sm-4 col-xs-6 shrink ">
+                    <a href="/product/<%= image.name %>" class="fancybox" rel="ligthbox">
+                    
+                    <% if(image.resolution=='3840x2160'){ %>
+                    <div class="badge bg-dark text-white fourK" >  4K  </div>
+                    <% } else { %>
+                     
+                    <div> </div>
+                        <% }%>
+                    <img title="<%=image.name %>"  class="img-responsive"  alt="<%= image.description %>"
+                    src="<%= image.profilePhotoLocation%>" />
+                </a> 
+            
+                <p> <%= image.name%> </p>
+                </div>
+          <% }) %>  
+            </div>
+            </div>
+         
+        </div>
+      </div>
+     </main>
+        
+      </div>
+   
+  
+  
+      <footer id="footer" class="footer footer-big footer-color-black" data-color="black">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-2 col-sm-3">
+                      <div class="info">
+                        <a href="/about"> <h5 class="title">About</h5>
+                        </a>  
                       </div>
                   </div>
-
+                  <div class="col-md-3 col-md-offset-1 col-sm-3">
+                      <div class="info">
+                         <a href="/terms"> <h5 class="title">
+                          Terms of Use
+                         </h5>
+                         </a>
+                      </div>
+                  </div>
+                  <div class="col-md-3 col-sm-3">
+                      <div class="info">
+                      <a href="/privacy-policy">    <h5 class="title">
+                          Privacy Policy
+                      </h5>
+                      </a> 
+                      </div>
+                  </div>
+                  <div class="col-md-2 col-md-offset-1 col-sm-3">
+                      <div class="info">
+                          <h5 class="title">Follow us on</h5>
+                          <nav>
+                              <ul>
+                                  <li>
+                                      <a href="#" >
+                                          <i class="fa fa-facebook-square"></i> Facebook
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="#" >
+                                          <i class="fa fa-twitter"></i> Twitter
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="#" >
+                                          <i class="fa fa-instagram"></i> Instagram
+                                      </a>
+                                  </li>
+                                  
+                              </ul>
+                          </nav>
+                      </div>
+                  </div>
               </div>
-
-          </div>
-      </div>
-  </div>
-   </header>
-  
-
-
-  
-
-   <main >
-     <div class="karya" >
-      
-      <div class="test">
-       
-        <div class="container img-content" >
-          <div class="row">
-              <% items.forEach(function(image) { %>
-                  
-               <div class="col-md-3 col-sm-4 col-xs-6 shrink ">
-                  <a href="/product/<%= image.name %>" class="fancybox" rel="ligthbox">
-                  
-                  <% if(image.resolution=='3840x2160'){ %>
-                  <div class="badge bg-dark text-white fourK" >  4K  </div>
-                  <% } else { %>
-                   
-                  <div> </div>
-                      <% }%>
-                  <img title="<%=image.name %>"  class="img-responsive"  alt="<%= image.description %>"
-                  src="<%= image.profilePhotoLocation%>" />
-              </a> 
-          
-              <p> <%= image.name%> </p>
+              <hr>
+              <div class="copyright">
+                  &copy;
+                   <script> document.write(new Date().getFullYear()) </script>  Pixground
               </div>
-        <% }) %>  
           </div>
-          </div>
-       
-      </div>
-    </div>
-   </main>
-      
- 
-
-   <footer class="footer footer-big footer-color-black" data-color="black">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-2 col-sm-3">
-                <div class="info">
-                  <a href="/about"> <h5 class="title">About</h5>
-                  </a>  
-                </div>
-            </div>
-            <div class="col-md-3 col-md-offset-1 col-sm-3">
-                <div class="info">
-                   <a href="/terms"> <h5 class="title">
-                    Terms of Use
-                   </h5>
-                   </a>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-3">
-                <div class="info">
-                <a href="/privacy-policy">    <h5 class="title">
-                    Privacy Policy
-                </h5>
-                </a> 
-                </div>
-            </div>
-            <div class="col-md-2 col-md-offset-1 col-sm-3">
-                <div class="info">
-                    <h5 class="title">Follow us on</h5>
-                    <nav>
-                        <ul>
-                            <li>
-                                <a href="#" >
-                                    <i class="fa fa-facebook-square"></i> Facebook
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" >
-                                    <i class="fa fa-twitter"></i> Twitter
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" >
-                                    <i class="fa fa-instagram"></i> Instagram
-                                </a>
-                            </li>
-                            
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <div class="copyright">
-            &copy;
-             <script> document.write(new Date().getFullYear()) </script>  Pixground
-        </div>
-    </div>
-</footer>
-
+      </footer>
+</div>
 
 
     <!--   core js files    -->
@@ -340,7 +344,6 @@ $(window).scroll(function () {
     }
 });
 </script>
-
 </body>
 
 
