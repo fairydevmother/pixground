@@ -15,7 +15,6 @@
       }
       
       
-      
          .img-content .title {
           margin-bottom:10px;    
           }
@@ -25,8 +24,8 @@
          }
          .img-responsive{
           border-radius:4px;
-          width:21rem; 
-          height:11rem;
+          width:23rem; 
+          height:12rem;
          }
       
           .shrink img:hover {

@@ -1,3 +1,92 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head'); %>
+  <title>404 Page Not Found</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300,500');
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-image: linear-gradient(to right top, #34517f, #665083, #8e4e78, #a85264, #b1614c, #ad624d, #aa634f, #a66450, #945961, #765467, #595060, #47484d);    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    min-width: 100vw;
+    font-family: "Roboto Mono", "Liberation Mono", Consolas, monospace;
+    color: rgba(255,255,255,.87);
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.container,
+.container > .row,
+.container > .row > div {
+    height: 100%;
+}
+.number {
+        font-size: 12rem;
+        font-weight: 500;
+}    
+
+#countUp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    
+    
+        + .text {
+            margin: 0 0 1rem;
+        }
+    
+    
+    .text {
+        font-weight: 300;
+        font-size:4rem;
+        text-align: center;
+      
+    }
+}
+.mail{
+    color:blue;
+}
+  </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="xs-12 md-6 mx-auto">
+                <div id="countUp">
+                    <div class="number">404</div>
+                    <div class="text">Page not found</div>
+                    <div class="text">If you are having issues or </div>
+                    <div class="text">require support. Contact here: </div>
+                   <div class="text">
+                       <a class="text mail" href="mailto:pixground23@gmail.com">pixground23@gmail.com</a>
+                       </div> 
+                </div>
+            </div>
+        </div>
+    </div> 
+
+
+
+    
+
+
+
+
+
+
+</body>
+</html>

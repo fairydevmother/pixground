@@ -276,7 +276,7 @@ app.get("/search", async (req,res)=>{
 });
 
 
-app.get("/product/:name", function(req,res, next) { 
+app.get("/photos/:name", function(req,res, next) { 
 
 
 	const requestedImgName = req.params.name;
@@ -293,7 +293,7 @@ app.get("/product/:name", function(req,res, next) {
 				throw(error);
 			}
 			
-			return res.render('product', {
+			return res.render('photos', {
 				items:items, image:image
 			 });
 		}).catch(err=>console.log(err));
@@ -367,6 +367,9 @@ function isLoggedIn(req, res, next){
 }
 
 
+app.use((req, res, next) => {
+    res.status(404).render("error");
+})
 
 const PORT = process.env.PORT || 3000;
    app.listen(PORT || process.env.Port , function () {

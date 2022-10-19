@@ -57,31 +57,31 @@
                
            <div class="box" >
 		
-					<a class="btn" id="downloadImage"href="<%= image.profilePhotoLocation %>"  download="<% image.address%>"rel="nofollow" onclick="_reg()" 
-						class="block-gradient graHover dlbtn ga-click cate-5" data-ga-type="button" data-ga-label="5" > 
-						<i class="bi bi-download" ></i>    Download
-					</a> 
-          
-           
-				</div>
-        <div class="boxTwo"> <!-- AddToAny BEGIN -->
-          <div style="padding-top:3%;padding-left:22%" class="a2a_kit a2a_kit_size_50 a2a_default_style" >
+           <!-- AddToAny BEGIN -->
+          <div  class="a2a_kit a2a_kit_size_50 a2a_default_style" >
+            <a class="btn" id="downloadImage"href="<%= image.profilePhotoLocation %>"  download="<% image.address%>"rel="nofollow" onclick="_reg()" 
+              class="block-gradient graHover dlbtn ga-click cate-5" data-ga-type="button" data-ga-label="5" > 
+              <br>
+              <i class="bi bi-download" > </i>&nbsp;    Download
+            </a> 
             <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
             <button class="like__btn">
-              <span id="icon"><img width="23px"  src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png" /></span>
-              <span id="count">0</span> Like
+              <span id="icon"><img width="18px"  src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png" /></span>
+              
            </button>
            
         </div>
          <script async src="https://static.addtoany.com/menu/page.js"></script>
          <!-- AddToAny END -->
-       </div>
+				</div>
+        
 				<div class="boxTwo">	
                    <ul class="list-unstyled">
                     
                         <li>Description:                  <%=image.description%></li>
                         <li>Image Type :                  <%= image.imgType%></li>
                         <li>Resolution :                  <%= image.resolution%></li>
+                        <li>Downloads :                  </li>
                      
                     </ul>
 
@@ -101,7 +101,7 @@
               <% items.forEach(function(image) { %>
                   
                <div class="col-md-2 col-sm-4 col-xs-6 shrink ">
-                  <a href="/product/<%= image.name %>" class="fancybox" rel="ligthbox">
+                  <a href="/photos/<%= image.name %>" class="fancybox" rel="ligthbox">
                   
                   <% if(image.imgType=='image/png'){ %>
                   <div class="badge bg-dark text-white fourK" >  4K  </div>
@@ -124,7 +124,10 @@
   
     </div>
   </section>
+  
+  </main>
   <% }  else { %>
+  <main>
 
     
    <section class="content-item grey" style="padding-top:5.5rem;padding-bottom:10rem;" id="gallery-item">
@@ -149,19 +152,20 @@
               <i class="bi bi-download" ></i>    Download
             </a> 
             
-             
-          </div>
-          <div class="boxTwo"> <!-- AddToAny BEGIN -->
+            <!-- AddToAny BEGIN -->
             <div style="padding-top:3%;padding-left:22%" class="a2a_kit a2a_kit_size_50 a2a_default_style" >
               <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
               <button class="like__btn">
-                <span id="icon"><img width="23px"  src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png" /></span>
+                <span id="icon"><img width="23px"   src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png" /></span>
                 <span id="count">0</span> Like
              </button>
              
           </div>
            <script async src="https://static.addtoany.com/menu/page.js"></script>
-           <!-- AddToAny END -->
+           <!-- AddToAny END -->  
+          </div>
+          <div class="boxTwo"> 
+           
          </div>
 				<div class="boxTwo">	
                    <ul class="list-unstyled">
@@ -178,18 +182,22 @@
             
         </div>
        
-        <div class="container img-content" style="top:5px;" >
-          <h3>Related Searches</h3>
+      
+         
+
+
+     
+        <div class="container img-content" >
+          <h3>Related Pictures</h3>
           <div style="text-align:center;" class="row">
             
               <% items.forEach(function(image) { %>
                   
                <div class="col-md-2 col-sm-4 col-xs-6 shrink ">
-                  <a href="/product/<%= image.name %>" class="fancybox" rel="ligthbox">
+                  <a href="/photos/<%= image.name %>" class="fancybox" rel="ligthbox">
                   
                   <% if(image.imgType=='image/png'){ %>
-                  <div class="badge bg-dark text-white"  
-                  style="position:absolute;top: 0.5rem; right: 1rem">  4K  </div>
+                  <div class="badge bg-dark text-white fourK" >  4K  </div>
                   <% } else { %>
                    
                   <div> </div>
@@ -204,18 +212,12 @@
           </div>
         </div>
         
-     
-     
         
     </div>
   </section>
 
 
   <% }%>
-
-
- 
-
 
 
 </main>
@@ -270,8 +272,15 @@ let clicked = false;
 likeBtn.addEventListener("click", () => {
   if (!clicked) {
     clicked = true;
-    likeIcon.innerHTML = `<img width="23px"  src="https://cdn-icons-png.flaticon.com/512/210/210545.png"/>`;
-    count.textContent++;
+    if(!user){
+      likeIcon.innerHTML = `<a href="/login"><img width="23px"  src="https://cdn-icons-png.flaticon.com/512/210/210545.png"/></a>`;
+     count.textContent++;
+    }
+    else{
+      likeIcon.innerHTML = `<img width="23px"  src="https://cdn-icons-png.flaticon.com/512/210/210545.png"/>`;
+ 
+    }
+ 
   } else {
     clicked = false;
     likeIcon.innerHTML = `<img width="23px" src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png" />`;
