@@ -61,17 +61,17 @@ display:block;
 /* BOXES */
 
 #downloadImage{
-    width:10rem;
-    height:3.6rem;
-    padding:4px;
-    margin-right:10px;
+    width:13rem;
+    height:3.7rem;
+    margin-right:13px;
    
 }
 .box {
+ width:28rem;
 margin-top:7rem;
-padding:14px;
+padding:14px 14px 14px 0;
 background-color: rgba(0,0,0,0.28);
-padding-left:15%;
+padding-left:12%;
 border-radius:5px;
 
 }
@@ -85,7 +85,7 @@ background-color: rgba(0,0,0,0.28);
 padding:14px;
 background-color: rgba(0,0,0,0.28);
 margin-top:0.75rem;
-
+width:28rem;
 }
 
 .tagText{
@@ -202,7 +202,9 @@ margin-top:0;
 
 .like__btn {
     padding: 1px 15px;
-    background: #0080ff;
+    background-color:#1E1E1E;
+    width:4rem; 
+    height:3.5rem;  
     margin-left:10px;
     font-size: 18px;
     font-family: "Open Sans", sans-serif;
@@ -217,14 +219,14 @@ margin-top:0;
 @media(min-width:992px){
     .img-responsive{
         margin-top:1rem;
-        width:70rem;
+        width:80rem;
         padding:5px;   
         background-color: rgba(0,0,0,0.28);
         }
         .imgs{
-        width:14rem;
+        width:18rem;
         padding:2px;
-         height:7.9rem;
+         height:9.8rem;
         background-color: rgba(0,0,0,0.28);
         border-radius:2px;
         }

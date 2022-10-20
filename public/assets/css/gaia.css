@@ -2959,7 +2959,9 @@ main{
     margin: 0 auto 15px;
     float: none;
   }
-
+  .search-proposol{
+    color:white;
+  }
   .section-contact-3 .address-container {
     top: 0;
     width: 100% !important;
