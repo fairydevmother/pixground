@@ -313,6 +313,7 @@
     "mquery": "^4.0.3",
     "ms": "^2.1.2",
     "mute-stream": "^0.0.8",
+    "nanoid": "^4.0.0",
     "natural-compare": "^1.4.0",
     "negotiator": "^0.6.3",
     "node-addon-api": "^5.0.0",

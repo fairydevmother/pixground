@@ -25,6 +25,7 @@ font-size:28px;
 line-height:45px;
 margin:20px 0;
 font-family: 'Rubik', sans-serif;
+
 }
 
 .content-item h3 {
@@ -66,9 +67,8 @@ display:block;
     margin-right:13px;
    
 }
-.box {
- width:28rem;
-margin-top:7rem;
+.boxx {
+width:28rem;
 padding:14px 14px 14px 0;
 background-color: rgba(0,0,0,0.28);
 padding-left:12%;
@@ -94,33 +94,40 @@ background-color:#464749;
 border-radius:0.1rem;
 margin-right:5px;
 }
+.tagT{
+    padding:7px;
+    color:#1E2023 ;
 
-.box h3 {
+height:7rem;
+margin-bottom:7rem;
+}
+
+.boxx h3 {
 margin:30px 0 5px;
 font-weight:bold;
 
 }
 
-.box ul {
+.boxx ul {
 margin:0;
 }
 
-.box ul li {
+.boxx ul li {
 font-size:13px;
 padding:10px 0;
 font-weight:600;
 }
 
-.box ul li:last-child {
+.boxx ul li:last-child {
 border-bottom:0;
 }
 
-.box ul li i {
+.boxx ul li i {
 font-size:18px;
 margin-right:20px;
 }
 
-.box.categories ul li i {
+.boxx.categories ul li i {
 color:#BBBBBB;	
 position:relative;
 top:2px;
@@ -144,13 +151,13 @@ text-align:right;
 margin-top:5px;
 }
 
-.box.posts ul li i {
+.boxx.posts ul li i {
 color:#333333;
 font-size:14px;
 margin-right:10px;
 }
 
-.box.tags ul.blog-tags li {
+.boxx.tags ul.blog-tags li {
 border:0;
 }
 
@@ -159,7 +166,7 @@ padding:7px 0;
 }
 
 div ul.blog-tags li i,
-div .box.tags ul li i {
+div .boxx.tags ul li i {
 color:#FFFFFF;
 position:relative;
 top:1px;
@@ -193,6 +200,8 @@ margin-top:0;
 .imgs{
     width:16rem;
     padding:2px;
+    border-radius:5px;
+    height:8.8rem;
 }
 }
 .grey{
@@ -226,9 +235,8 @@ margin-top:0;
         .imgs{
         width:18rem;
         padding:2px;
-         height:9.8rem;
-        background-color: rgba(0,0,0,0.28);
-        border-radius:2px;
+        height:9.8rem;
+        border-radius:5px;
         }
 }
 

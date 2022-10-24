@@ -166,3 +166,10 @@
   .fourK{
    position:absolute;top: 0.5rem; right: 1rem
   }
+
+  @media (min-width: 1800px) and (max-width: 2500px){
+     .img-responsive{
+      width:29rem; 
+      height:11.5rem;
+     }
+  }

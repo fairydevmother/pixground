@@ -171,9 +171,9 @@
                 </div>
                 <div style="text-align:center;padding-top:10px" class="home-banner-words">
                   <span class="search-txt">Popular Search:</span>
-                  <a href="/" class='search_proposal' data-no='1' target='_blank'>template</a>
-                  <a href="/" class='search_proposal' data-no='2' target='_blank'>backgrounds</a>
-                  <a href="/" class='search_proposal' data-no='3' target='_blank'>png images</a>
+                  <a href="/search?result=template" class='search_proposal' data-no='1' target='_blank'>template</a>
+                  <a href="/search?result=backgrounds" class='search_proposal' data-no='2' target='_blank'>backgrounds</a>
+                  <a href="/search?result=png images" class='search_proposal' data-no='3' target='_blank'>png images</a>
                   
                 </div>
             </div>
@@ -195,7 +195,7 @@
                 <% items.forEach(function(image) { %>
                     
                  <div class="col-md-3 col-sm-4 col-xs-6 shrink ">
-                    <a href="/photos/<%= image.name %>" class="fancybox" rel="ligthbox">
+                    <a href="/<%= image.name %>" class="fancybox" rel="ligthbox">
                     
                     <% if(image.resolution=='3840x2160'){ %>
                     <div class="badge bg-dark text-white fourK" >  4K  </div>

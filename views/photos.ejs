@@ -31,10 +31,7 @@
 
 <main>
  
-	<% 
-	const tag= image.tags
-	if(typeof tag !== 'undefined') {  %>
-
+	
 	
    <section class="content-item grey"  style="padding-top:5.5rem;padding-bottom:10rem;" id="gallery-item">
     <div class="container">
@@ -42,20 +39,26 @@
           <div class="col-sm-8" >
 			 
 			   <h2><%=image.name%></h2>
-			   
-			   <%  tag.forEach(function(image) { 
+			   <% 
+	      const tag= image.tags
+	     if(typeof tag !== 'undefined') { 
+         tag.forEach(function(image) { 
 				%>
 					<span class="tagText"><%=image%></span>
 				 
-			   <% }) %>
+			   <% })  }%>
+          <span class="tagT">No Tags</span>
+
+          
 			   
-              <img src="<%= image.profilePhotoLocation %>" class="img-responsive" alt="">
+              <img src="<%= image.profilePhotoLocation %>" title="<%=image.name %>"  
+              class="img-responsive"  alt="<%= image.description %>">
              
 			</div>
       
-            <div class="col-sm-4">
+            <div class="col-sm-4" style="margin-top:7rem;">
                
-           <div class="box" >
+           <div class="boxx" id="toper">
 		
            <!-- AddToAny BEGIN -->
           <div  class="a2a_kit a2a_kit_size_50 a2a_default_style" >
@@ -65,10 +68,10 @@
               <i class="bi bi-download" > </i>&nbsp;    Download
             </a>
             <a class="a2a_dd"  href="https://www.addtoany.com/share"></a>
-            <button class="like__btn">
+            <button   class="like__btn">
               <span id="icon">
                 <img width="26px"  src="/assets/img/heart.png" /></span>
-              
+                
            </button> 
          
             
@@ -85,7 +88,9 @@
                         <li>Image Type :                  <%= image.imgType%></li>
                         <li>Resolution :                  <%= image.resolution%></li>
                         <li>Downloads :                  </li>
-                     
+                      
+                        
+                        
                     </ul>
 
 					<a class="fancybox" class="btn btn-normal show-image" rel="chimps" href="<%=image.profilePhotoLocation%>">Full Size</a>
@@ -128,101 +133,6 @@
     </div>
   </section>
   
-  </main>
-  <% }  else { %>
-  <main>
-
-    
-   <section class="content-item grey" style="padding-top:5.5rem;padding-bottom:10rem;" id="gallery-item">
-    <div class="container">
-      <div class="row">
-       <div class="col-sm-8" >
-			 
-			   <h2><%=image.name%></h2>
-			   
-			   
-              <img src="<%= image.profilePhotoLocation %>" class="img-responsive" alt="">
-             
-			</div>
-      
-             
-          <div class="col-sm-4">
-                 
-             <div class="box" >
-      
-            <a class="btn" id="downloadImage"href="<%= image.profilePhotoLocation %>"  download="<% image.address%>"rel="nofollow" onclick="_reg()" 
-              class="block-gradient graHover dlbtn ga-click cate-5" data-ga-type="button" data-ga-label="5" > 
-              <i class="bi bi-download" ></i>    Download
-            </a> 
-            
-            <!-- AddToAny BEGIN -->
-            <div style="padding-top:3%;padding-left:22%" class="a2a_kit a2a_kit_size_50 a2a_default_style" >
-              <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
-              <button class="like__btn">
-                <span id="icon"><img width="23px"   src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png" /></span>
-                <span id="count">0</span> Like
-             </button>
-             
-          </div>
-           <script async src="https://static.addtoany.com/menu/page.js"></script>
-           <!-- AddToAny END -->  
-          </div>
-          <div class="boxTwo"> 
-           
-         </div>
-				<div class="boxTwo">	
-                   <ul class="list-unstyled">
-                        <li>Description : <%=image.description%></li>
-                        <li>Image Type : <%= image.imgType%></li>
-                        <li>Resolution : <%= image.resolution%></li>
-                    </ul>
-
-					<a class="fancybox" class="btn btn-normal show-image" rel="chimps" href="<%=image.profilePhotoLocation%>">Full Size</a>
- 
-                </div>
-				
-            </div>
-            
-        </div>
-       
-      
-         
-
-
-     
-        <div class="container img-content" >
-          <h3>Related Pictures</h3>
-          <div style="text-align:center;" class="row">
-            
-              <% items.forEach(function(image) { %>
-                  
-               <div class="col-md-2 col-sm-4 col-xs-6 shrink ">
-                  <a href="/photos/<%= image.name %>" class="fancybox" rel="ligthbox">
-                  
-                  <% if(image.imgType=='image/png'){ %>
-                  <div class="badge bg-dark text-white fourK" >  4K  </div>
-                  <% } else { %>
-                   
-                  <div> </div>
-                      <% }%>
-                  <img title="<%=image.name %>"  class="imgs"  alt="<%= image.description %>"
-                  src="<%= image.profilePhotoLocation%>" />
-              </a> 
-          
-              <p> <%= image.name%> </p>
-              </div>
-          <% }) %>  
-          </div>
-        </div>
-        
-        
-    </div>
-  </section>
-
-
-  <% }%>
-
-
 </main>
 
 
@@ -231,11 +141,14 @@
    <%- include('partials/footer'); %>
 </footer>
       
-
+`
  
   
-  <script>
+<script>
     
+
+
+
    function myFunction(x) {
   x.classList.toggle("fa-thumbs-down");
    }
@@ -290,6 +203,8 @@ likeBtn.addEventListener("click", () => {
     count.textContent--;
   }
 });
+
+
 
   </script>
  

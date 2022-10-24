@@ -27,6 +27,8 @@ const CompanySchema = new mongoose.Schema({
   category: {
     type: String
   },
+  visitName: String,
+  count: Number,
 
 },
 { versionKey: false },

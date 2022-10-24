@@ -276,7 +276,7 @@ app.get("/search", async (req,res)=>{
 });
 
 
-app.get("/photos/:name", function(req,res, next) { 
+app.get("/:name", function(req,res, next) { 
 
 
 	const requestedImgName = req.params.name;
@@ -300,6 +300,13 @@ app.get("/photos/:name", function(req,res, next) {
 		
 			  
 	});
+
+
+
+
+
+
+	
 })
 
 
