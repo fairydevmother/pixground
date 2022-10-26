@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const TagSchema = new mongoose.Schema({ name: String });
+
 
 const CompanySchema = new mongoose.Schema({
   
@@ -18,17 +18,13 @@ const CompanySchema = new mongoose.Schema({
     type: String,
   },
   resolution: {
-    type: String
+    type: String,
   },
   description: {
     type: String
   },
   tags:[String],
-  category: {
-    type: String
-  },
-  visitName: String,
-  count: Number,
+  category: [String],
 
 },
 { versionKey: false },

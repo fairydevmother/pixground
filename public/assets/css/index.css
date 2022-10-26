@@ -164,7 +164,8 @@
    height:28.125rem;
   }
   .fourK{
-   position:absolute;top: 0.5rem; right: 1rem
+   position:absolute;top: 0.3rem; right: 1.5rem;
+   border-radius:4%;
   }
 
   @media (min-width: 1800px) and (max-width: 2500px){

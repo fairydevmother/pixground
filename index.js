@@ -151,27 +151,47 @@ app.get('/',fetchProducts, function(req, res, next) {
 
 
 app.get('/categories', function(req, res, next) {
-  res.render('categories');
+ 
+
+  Product.find({}).then(items=>{
+	if(!items){
+		const error=new Error("No img is there to fetch");
+		error.statusCode=404;
+		throw(error);
+	}
+	
+	return res.render('categories', {
+		items:items
+	 });
+  }).catch(err=>console.log(err));
 });
-app.post("categories",function(req,res, next){
+
+app.get("/category/:category",function(req,res, next){
+
+	const requestedImgCat = req.params.category;
+	console.log(requestedImgCat);
+  
+	const search=req.params.category;
+
+	let regex = new RegExp(`^[${search}0-9._-]+$`, "ig");
 
 	
-})
+	Product.find({category:{'$regex':regex}},function (err,items){
+		if(err){
+			console.log(err);
+		  }
+		  else{
+			res.render("category",{items:items, search:search});
+		  }
+	})
+});
 
 
 app.get('/register', function(req, res, next) {
   res.render('register');
 });
 
-/* POST /signup
- *
- * This route creates a new user account.
- *
- * A desired username and password are submitted to this route via an HTML form,
- * which was rendered by the `GET /signup` route.  The password is hashed and
- * then a new user record is inserted into the database.  If the record is
- * successfully created, the user is logged in.
- */
+/* POST /signup */
 app.post('/register', function(req, res, next) {
   User.register(new User({ email: req.body.email, username: req.body.username }), req.body.password, 
   function (err, user) {
@@ -270,13 +290,13 @@ app.get("/search", async (req,res)=>{
 			res.render("search",{products:products,tag:search});
 		  }
 	})
-
+``
 	
 	
 });
 
 
-app.get("/:name", function(req,res, next) { 
+app.get("/photos/:name", function(req,res, next) { 
 
 
 	const requestedImgName = req.params.name;

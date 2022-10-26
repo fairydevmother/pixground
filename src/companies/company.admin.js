@@ -27,13 +27,17 @@ const options = {
     },
     password: {
       type: 'password',
-    },
+    }, 
     uploadImage: {
       components: {
         edit: AdminBro.bundle('./components/upload-image.edit.tsx'),
         list: AdminBro.bundle('./components/upload-image.list.tsx'),
       },
     },
+    
+   
+
+    
   },
   actions: {
     new: {

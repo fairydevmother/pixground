@@ -14,6 +14,7 @@
   background-size:cover;
   }
   </style>
+     <link href="/assets/css/other.css" rel="stylesheet"/>
 </head>
 <body>
 
@@ -24,20 +25,29 @@
 </header>
 
 <main >
-  <% items.forEach(function(item) { %>
-    <section class="vh-100" style="padding-top:70px;">
-        <div style="width:100%; text-align:center;">
-            <div class="container">
-              <h1 style="font-size:28px; background-color:rgba(0,0,0,0.28);padding:10px" >
-                <%= item.termsofuseTitle%></h1>
-              <p style="padding:8px; background-color:rgba(51,50,51,1);"class="lead">
-                <%=item.termsofuseContent %>
-              </p>
+    <% items.forEach(function(item) { %>
+      <section  style="padding-top:70px;">
+          <div style="width:100%; text-align:center;">
+              <div class="container">
+                <div class="module">
+                  <div class="module-inside">
+                  <h1 class="innerTitle">
+                 <%= item.termsofuseTitle%></h1>
+                  </div>
+                </div>
+               
+               
+                
+              </div>
+              <div class="container">
+                <p class="lead">
+                  <%=item.termsofuseContent %>
+                </p>
+               </div>
+             
             </div>
-          </div>
-    </section>
-    <% }) %>
-
+      </section>
+      <% }) %>
 </main>
 
 

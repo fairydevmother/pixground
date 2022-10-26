@@ -291,3 +291,65 @@ var BrowserDetect = {
 };
 
 var better_browser = '<div class="container"><div class="better-browser row"><div class="col-md-2"></div><div class="col-md-8"><h3>We are sorry but it looks like your Browser doesn\'t support our website Features. In order to get the full experience please download a new version of your favourite browser.</h3></div><div class="col-md-2"></div><br><div class="col-md-4"><a href="https://www.mozilla.org/ro/firefox/new/" class="btn btn-warning">Mozilla</a><br></div><div class="col-md-4"><a href="https://www.google.com/chrome/browser/desktop/index.html" class="btn ">Chrome</a><br></div><div class="col-md-4"><a href="http://windows.microsoft.com/en-us/internet-explorer/ie-11-worldwide-languages" class="btn">Internet Explorer</a><br></div><br><br><h4>Thank you!</h4></div></div>';
+
+
+
+
+
+
+   /**navbar scroll**/
+   $(function () {
+  $(document).scroll(function () {
+    var $nav = $(".navbar-fixed-top");
+    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+  });
+});
+
+
+
+// Get the button:
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+
+$("#main").append("<footer class='footer footer-big footer-color-black' data-color='black'><div class='container'><div class='row'><div class='col-md-2 col-sm-3'><div class='info'><a href='/about'> <h5 class='title'>About</h5></a></div></div><div class='col-md-3 col-md-offset-1 col-sm-3'><div class='info'><a href='/terms'> <h5 class='title'>Terms of Use</h5></a></div></div><div class='col-md-3 col-sm-3'><div class='info'><a href='/privacy-policy'><h5 class='title'>Privacy Policy</h5></a></div></div><div class='col-md-2 col-md-offset-1 col-sm-3'><div class='info'><h5 class='title'>Follow us on</h5><nav><ul><li><a href='#'><i class='fa fa-facebook-square'></i> Facebook</a></li><li><a href='#' ><i class='fa fa-twitter'></i> Twitter</a></li><li><a href='#'><i class='fa fa-instagram'></i> Instagram</a></li></ul></nav></div></div></div><hr><div class='copyright' id='date'> </div></div></footer>");
+
+
+document.getElementById("date").innerHTML="&copy; "+new Date().getFullYear()+" Pixground";
+
+$(".karya div").slice(26).hide();
+
+var mincount = 26;
+var maxcount = 999999;
+
+
+
+$(window).scroll(function () {
+    if ($(window).scrollTop() + $(window).height() >= $(document).height() - 50) {
+        $(".karya div").slice(mincount, maxcount).slideDown(1400);
+
+        mincount = mincount + 26;
+        maxcount = maxcount + 26
+
+    }
+  
+     
+    
+     
+});

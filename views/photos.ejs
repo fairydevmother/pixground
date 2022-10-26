@@ -106,24 +106,27 @@
           <h3>Related Pictures</h3>
           <div style="text-align:center;" class="row" >
             
-              <% items.forEach(function(image) { %>
+              <%  if(typeof items !== 'undefined') { items.forEach(function(image) { %>
                   
                <div class="col-md-3 col-md-4 col-xs-6  shrink ">
                   <a style="margin-left:-45px;"  href="/photos/<%= image.name %>" class="fancybox" rel="ligthbox">
                   
-                  <% if(image.imgType=='image/png'){ %>
+                  <% if(image.Resolution =='3840x2160'){ %>
                   <div class="badge bg-dark text-white fourK" >  4K  </div>
                   <% } else { %>
                    
                   <div> </div>
-                      <% }%>
+                      <% } %>
                   <img title="<%=image.name %>"  class="imgs"  alt="<%= image.description %>"
                   src="<%= image.profilePhotoLocation%>" />
               </a> 
           
-              <p> <%= image.name%> </p>
+              <p> <%= image.name %> </p> 
+               <% })  } else { %>
+               <div></div>
+               <% } %>
               </div>
-          <% }) %>  
+          
           </div>
         </div>
         

@@ -3,99 +3,12 @@
 <head>
   <%- include('partials/head'); %>
   <title>Get in Touch With Us Now</title>
+  <link href="/assets/css/other.css" rel="stylesheet"/>
   <style>
+
   body{margin-top:20px;}
 
-.card {
-    min-width: 0;
-    margin: 20px 10px;
-    width: 100%;    
-    background: #0C0C0C;
-    color: #696969;
-    -webkit-transition: .3s ease all;
-    transition: .3s ease all;
-    border: none;
-    border-radius: 5px;
-    padding: 0;
-    margin-bottom: 30px;
-}
-
-.card .card-img-container .card-img {
-  background-size: cover;
-  background-position: top center;
-  display: block;
-  height: 175px;
-}
-
-.card .card-img {
-  height: 150px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-.card .card-img-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-}
-
-.card .card-content {
-  padding: 20px 20px 40px;
-  text-align: center;
-}
-
-.card .card-meta {
-  font-size: 12px;
-}
-
-.card .meta-box {
-  margin-right: 20px;
-}
-
-.card .card-content h2 {
-  margin-top: 10px;
-  margin-bottom: 0;
-  font-size: 16px;
-  line-height: 1.4;
-}
-
-.card h2 a {
-  color: #D0D0D0;
-  -webkit-transition: .3s ease all;
-  transition: .3s ease all;
-}
-
-a:hover{
-    text-decoration:none;    
-}
-
-.card:hover h2 a {
-  color: #FFF;
-}
-
-.card .meta-tags a:hover {
-  color: #FFF;
-}
-.card .meta-tags .tag {
-  background: #DD1B16;
-  color: #f9c7c6;
-}
-.card .meta-tags a:last-child {
-  margin-right: 0;
-  border-bottom-right-radius: 5px;
-}
-.card .meta-tags a:first-child {
-  border-top-left-radius: 5px;
-}
-.card .meta-tags a {
-  display: inline-block;
-  padding: 3px 8px;
-  color: #FFF;
-  -webkit-transition: .3s ease all;
-  transition: .3s ease all;
-}
-
-  </style>
+ </style>
 </head>
 <body>
 
@@ -107,32 +20,52 @@ a:hover{
 <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="/assets/img/up-arrow.png" style="width:34px;" /></button>
 
 <main class="vh-100">
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card card-favorite">
-                  <div class="card-img-container">
-                    <a href="#" style="background-image:url('https://via.placeholder.com/400x200/FF6347/000000')" class="card-img"></a>
-                  </div>
-                  <div class="card-content">
-                    <div class="card-meta">
-                      <span class="meta-pulse meta-box">
-                        <h2>
-                            <a href="#">
-                          Category     
-                      </a>   
-                    </h2>
-                      </span>
-                      
-                    </div>
-                    
-                  </div>
-                    
-                </div>
+  <section  style="padding-top:70px;">
+    <div style="width:100%; text-align:center;">
+        <div class="container">
+          <div class="module">
+            <div class="module-inside">
+            <h1 class="innerT">categories</h1>
+            <p>More than 4000 popular albums of graphic resources, including PNG cliparts, vectors, and background photos.</p>
             </div>
-        </div>    
-    </div>
+          </div>
+         
+        </div>
+        <div class="container" style="margin-top:5rem;">
+          <div class="row">
+            <% items.forEach(function(image){ 
+              const expression=image.category;
+           if(typeof expression !== 'undefined' && expression !== 'null'){ 
+           %>
+           <div class="col-md-4">
+            <div class="card card-favorite">
+              <div class="card-img-container">
+                <a href="/category/<%= expression %>" style="background-image:url('/assets/img/category.png')" class="card-img"></a>
+              </div>
+              <div class="card-content">
+                <div class="card-meta">
+                  <span class="meta-pulse meta-box">
+                    <h2>
+                        <a href="/category/<%= expression %>">
+                      <%= expression%> 
+                  </a>   
+                </h2>
+                  </span>
+                  
+                </div>
+                
+              </div>
+                
+            </div>
+          </div> 
+           <% }
+            }) 
+            %>
+          </div>    
+        </div>
+      </div>
+</section>
+    
    
 </main>
 
