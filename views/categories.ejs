@@ -25,9 +25,8 @@
         <div class="container">
           <div class="module">
             <div class="module-inside">
-            <h1 class="innerT">categories</h1>
-            <p>More than 4000 popular albums of graphic resources, including PNG cliparts, vectors, and background photos.</p>
-            </div>
+            <h1 class="innerT">Categories</h1>
+             </div>
           </div>
          
         </div>
@@ -37,11 +36,11 @@
               const expression=image.category;
            if(typeof expression !== 'undefined' && expression !== 'null'){ 
            %>
-           <div class="col-md-4">
+           <div class="col-md-3 col-sm-4 col-xs-6">
             <div class="card card-favorite">
               <div class="card-img-container">
                 <a href="/category/<%= expression %>" style="background-image:url('/assets/img/category.png')" class="card-img"></a>
-              </div>
+              </div>  
               <div class="card-content">
                 <div class="card-meta">
                   <span class="meta-pulse meta-box">
