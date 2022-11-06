@@ -57,7 +57,7 @@
 
 
         
-    <nav class="navbar navbar-custom navbar-transparent navbar-fixed-top section-header"  >
+    <nav class="navbar navbar-custom  navbar-fixed-top section-header"  >
         <!-- if you want to keep the navbar hidden you can add this class to the navbar "navbar-burger"-->
         <div class="container">
             <div class="navbar-header" >
@@ -80,24 +80,35 @@
                 data-toggle="dropdown" role="button" aria-expanded="false">
                 
                 <i class="bi bi-border-all" ></i>
-                   All Categories </a>
+                   Explore </a>
                 <div class="dropdown-content" role="menu">
                   
                   <a href="/categories">Categories</a>
-                  <a href="/category/Templates">Templates</a>
-                  <a href="/category/PNG%20Images">PNG Images</a>
-                  <a href="/category/Backgrounds">Backgrounds</a>
                 </div>
               </li>
               <li class="dropdown drop">
                 <a href="#" class="seconDropbtn btn-default dropdown-toggle search"
                  data-toggle="dropdown" role="button" aria-expanded="false">
-                 <i class="bi bi-palette"></i>
-                  Creative Design</a>
+                
+                 Templates</a>
                
               </li>
-             
-              </ul> 
+              <li class="dropdown drop">
+                <a href="#" class="seconDropbtn btn-default dropdown-toggle search"
+                 data-toggle="dropdown" role="button" aria-expanded="false">
+                
+                 PNG Images</a>
+               
+              </li>
+              <li class="dropdown drop">
+                <a href="#" class="seconDropbtn btn-default dropdown-toggle search"
+                 data-toggle="dropdown" role="button" aria-expanded="false">
+                
+                 Backgrounds</a>
+               
+              </li>
+                 
+            </ul> 
                <% if(!user) { %> 
                 <ul class="nav navbar-nav navbar-right">
            
@@ -141,7 +152,7 @@
                         
                         <h1 class="title title-modern" >Welcome to Pixground</h1>
                         <p class="mb-title">Welcome to Pixground</p>
-                        <h4 class="altTitle">Find Pictures, Vectors, Photographs And More. Download High Quality Pictures For Free. </h4>
+                        <h4 class="altTitle">Find Posters, Powerpoint, Video, Vectors And More. </h4>
                        
                         <div class="input-group">
                             
@@ -172,7 +183,7 @@
   
                 </div>
                 <div style="text-align:center;padding-top:10px" class="home-banner-words">
-                  <span class="search-txt">Popular Search:</span>
+                  <span class="search-txt">Popular Wallpapers:</span>
                   <a href="/search?result=template" class='search_proposal' data-no='1' target='_blank'>template</a>
                   <a href="/search?result=backgrounds" class='search_proposal' data-no='2' target='_blank'>backgrounds</a>
                   <a href="/search?result=png images" class='search_proposal' data-no='3' target='_blank'>png images</a>
@@ -187,36 +198,28 @@
   
     <main>
   
-     
-       <div class="section section-our-team-freebie karya"   >
-        
-        <div class="test">
-         
-          <div class="container img-content" >
-            <div class="row">
-                <% items.forEach(function(image) { %>
-                    
-                 <div class="col-md-3 col-sm-4 col-xs-6 shrink ">
-                    <a href="/photos/<%= image.name %>" class="fancybox" rel="ligthbox">
-                    
-                    <% if(image.resolution=='3840x2160'){ %>
-                    <div class="badge bg-dark text-white fourK" >  4K  </div>
-                    <% } else { %>
-                     
-                    <div> </div>
-                        <% }%>
-                    <img title="<%=image.name %>"  class="img-responsive"  alt="<%= image.description %>"
-                    src="<%= image.profilePhotoLocation%>" />
-                </a> 
-            
-                <p> <%= image.name%> </p>
-                </div>
-          <% }) %>  
-            </div>
-            </div>
-         
+      <div class="grid image-grid karya">
+        <% items.forEach(function(image) { %>
+        <div class="grid-block test">
+          <div class="tile">
+            <a class="tile-link shrink" href="/photos/<%=image.name%>">
+                <!-- <% if(image.resolution=='3840x2160'){ %>
+                <div class="badge bg-dark text-white fourK" >  4K  </div>
+                <% } else { %>
+                 
+                <div> </div>
+                    <% }%> -->
+              <img class="tile-img" title="<%=image.name %>" alt="<%= image.description %>"
+              src="<%= image.profilePhotoLocation%>" >
+               <p > <%= image.name%> </p>
+            </a>
+          </div>
         </div>
-      </div>
+        <% }) %>
+      </div>     
+
+
+
       
    </main>
 <footer class='footer footer-big footer-color-black' data-color='black'>

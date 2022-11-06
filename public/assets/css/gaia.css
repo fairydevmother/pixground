@@ -11,7 +11,10 @@ body {
   font-size: 100%;
   
 }
-
+.navbar-custom{
+   background-color:#26282B;
+   height:4.7rem;
+}
 @media (min-width: 58em) {
   body {
     font-size: 100%;
@@ -61,7 +64,6 @@ h6,
 .content-blog p {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-family: "Cambo", "Times New Roman", serif;
 }
 h1 a,
 .h1 a,
@@ -157,21 +159,24 @@ a:hover {
     display:none;
   }
   .mb-title{
-    font-size:1.5rem;
+    font-size:1.3rem;
     font-weight:600;
     font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
   
   }
   .altTitle{
-    font-size:0.85rem;
+    font-size:0.95rem;
     font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight:200;
+    font-weight:400;
   }
   .srch-box{
       display:none;
 
   }
-  
+  .home-banner-words{
+  margin-top:10rem;
+ }
+ 
   
 }
 
@@ -179,15 +184,15 @@ a:hover {
 @media only screen and (min-width: 600px) and (max-width: 768px){
 
   .altTitle{
-    font-size:1.5rem;
+    font-size:1.2rem;
     font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight:200;
+    font-weight:400;
   }
   .title {
     display:none;
   }
   .mb-title{
-    font-size:2rem;
+    font-size:1.8rem;
     
     text-align: center;
     font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -196,13 +201,15 @@ a:hover {
   .srch-box{
     font-size:10px;
   }
-
+  .home-banner-words{
+    margin-top:9rem;
+   }
 }
 @media only screen and (min-width: 768px) and (max-width:992px){
   .altTitle{
-    font-size:1.5rem;
+    font-size:1.3rem;
     font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight:200;
+    font-weight:300;
   }
   .title {
     display:none;
@@ -225,13 +232,15 @@ a:hover {
     border-bottom-left-radius:4px;
   }
   
-  
+  .home-banner-words{
+    margin-top:9rem;
+   }
 }
 @media(min-width:992px){
   .altTitle{
-    font-size:1.5rem;
+    font-size:1.3rem;
     font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight:300;
+    font-weight:500;
   }
   .title {
     font-size:15pt;
@@ -243,6 +252,9 @@ a:hover {
   .mb-title{
     display:none;
   }
+  .home-banner-words{
+    margin-top:8rem;
+   }
   
 }
 
@@ -256,6 +268,7 @@ a:hover {
 .title-modern {
   font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 200;
+  font-size:37px !important;
 }
 
 .text-gray {
@@ -2565,6 +2578,7 @@ main{
   padding-bottom: 0;
   top:0;
   background-color:#1E2023;
+  width:100%;
 }
 .sec{
   background-color:#1E2023;

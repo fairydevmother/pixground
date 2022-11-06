@@ -34,17 +34,18 @@
 	
 	
    <section class="content-item grey"  style="padding-top:5.5rem;padding-bottom:10rem;" id="gallery-item">
-    <div class="container">
+    <div class="container product" >
       <div class="row">
           <div class="col-sm-8" >
 			 
 			   <h2><%=image.name%></h2>
 			   <% 
-	      const tag= image.tags
+	      const tag= image.tags;
+
 	     if(typeof tag !== 'undefined') { 
          tag.forEach(function(image) { 
 				%>
-					<span class="tagText"><%=image%></span>
+					<span class="tagText"><%=image.toLowerCase();%></span>
 				 
 			   <% })  }%>
           <span class="tagT">No Tags</span>
@@ -102,36 +103,48 @@
         </div>
         
       
-        <div class="container img-content" >
-          <h3>Related Pictures</h3>
-          <div style="text-align:center;" class="row" >
-            
-              <%  if(typeof items !== 'undefined') { items.forEach(function(image) { %>
-                  
-               <div class="col-md-3 col-md-4 col-xs-6  shrink ">
-                  <a style="margin-left:-45px;"  href="/photos/<%= image.name %>" class="fancybox" rel="ligthbox">
-                  
-                  <% if(image.Resolution =='3840x2160'){ %>
+       
+         
+       
+          <div class="tile" style="margin-left:20px;">
+            <h3>Related Pictures</h3>
+           </div>
+      
+        <div class="grid image-grid" >
+         
+           
+           <%  if(typeof items !== 'undefined') { items.forEach(function(image) { %>
+          <div class="grid-block">
+            <div class="tile">
+              <a class="tile-link" href="/photos/<%= image.name %>">
+                <!-- <% if(image.resolution=='3840x2160'){ %>
                   <div class="badge bg-dark text-white fourK" >  4K  </div>
                   <% } else { %>
                    
                   <div> </div>
-                      <% } %>
-                  <img title="<%=image.name %>"  class="imgs"  alt="<%= image.description %>"
-                  src="<%= image.profilePhotoLocation%>" />
-              </a> 
-          
-              <p> <%= image.name %> </p> 
-               <% })  } else { %>
-               <div></div>
-               <% } %>
-              </div>
-          
+                      <% }%> -->
+                  
+                      
+                <img class="tile-img imgs" title="<%=image.name %>"   alt="<%= image.description %>"
+                        src="<%= image.profilePhotoLocation%>" />
+              
+                <p > <%= image.name%> </p>
+              </a>
+              
+            </div>
+               
           </div>
-        </div>
-        
-     
+        <% })  } else { %>
+                <div></div>
+                <% } %>
       
+       </div>
+
+
+
+   
+    
+
   
     </div>
   </section>

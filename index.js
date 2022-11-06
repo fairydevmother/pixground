@@ -290,7 +290,7 @@ app.get("/search", async (req,res)=>{
 			res.render("search",{products:products,tag:search});
 		  }
 	})
-``
+
 	
 	
 });
@@ -306,7 +306,7 @@ app.get("/photos/:name", function(req,res, next) {
 
 	    const category= image.category;
 		console.log(category);
-		Product.find({category:category}).limit(4).sort({"name":-1}).then(items=>{
+		Product.find({category:category}).limit(12).sort({"name":-1}).then(items=>{
 			if(!items){
 				const error=new Error("No img is there to fetch");
 				error.statusCode=404;
