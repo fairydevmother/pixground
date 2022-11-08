@@ -402,7 +402,7 @@ function swipe() {
     largeImage.style.height=imHeight;
     var url=largeImage.getAttribute('src');
   
-    window.open(url,'Image','width=largeImage.stylewidth,height=largeImage.style.height,resizable=1');
+    window.open(url,'_blank','Image','width=largeImage.stylewidth,height=largeImage.style.height,resizable=1', );
  }
 // function prev() {
 //   const image = document.getElementById("imgDisplayed");
