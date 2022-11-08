@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
+var URLSlug = require("mongoose-slug-generator");
 
+mongoose.plugin(URLSlug);
 
 
 const CompanySchema = new mongoose.Schema({
@@ -23,14 +25,20 @@ const CompanySchema = new mongoose.Schema({
   description: {
     type: String
   },
+  slug: { type: String,
+     slug: "name"},
   tags:[String],
-  category: [String],
+  category:{type:String},
+
+
 
 },
 { versionKey: false },
 { timestamps: true },
 { collection: 'products'});
 
-const Company = mongoose.model('Company', CompanySchema);
 
-module.exports = Company ;
+const Company = mongoose.model('Company', CompanySchema,
+ );
+
+module.exports = Company;

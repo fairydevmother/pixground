@@ -353,3 +353,108 @@ $(window).scroll(function () {
     
      
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** DOWNLOAD BY SIZE */
+
+
+
+const canvas = document.getElementById("result");
+const ctx = canvas.getContext("2d");
+
+function loadImage(event) {
+  const image = document.getElementById("imgDisplayed");
+  image.src = URL.createObjectURL(event.target.files[0]);
+}
+
+const preview = document.getElementById("preview");
+preview.addEventListener("click", swipe);
+
+function swipe() {
+    var largeImage = document.getElementById('imgDisplayed');
+   
+    largeImage.style.display = 'block';
+   
+    const imWidth=document.querySelector('input[type="radio"]:checked').name;
+    const imHeight =document.querySelector('input[type="radio"]:checked').value;
+  
+    largeImage.style.width=imWidth;
+    largeImage.style.height=imHeight;
+    var url=largeImage.getAttribute('src');
+  
+    window.open(url,'Image','width=largeImage.stylewidth,height=largeImage.style.height,resizable=1');
+ }
+// function prev() {
+//   const image = document.getElementById("imgDisplayed");
+  
+//   const imWidth=document.querySelector('input[type="radio"]:checked').name;
+//   const imHeight =document.querySelector('input[type="radio"]:checked').value;
+  
+
+//   canvas.width = imWidth;
+//   canvas.height = imHeight;
+   
+//   ctx.drawImage(image, 0, 0, imWidth, imHeight);
+  
+
+//   let form = document.getElementById("form");
+//   form.reset();
+// }
+
+
+const down = document.querySelector("#down");
+down.addEventListener("click", downloadImage);
+
+function downloadImage(){
+    const image = document.getElementById("imgDisplayed");
+    const name= image.name;
+  const imWidth=document.querySelector('input[type="radio"]:checked').name;
+  const imHeight =document.querySelector('input[type="radio"]:checked').value;
+  
+
+  canvas.width = imWidth;
+  canvas.height = imHeight;
+
+  ctx.drawImage(image, 0, 0, imWidth, imHeight);
+
+  
+    
+    const a = document.createElement("a");
+    document.body.appendChild(a);
+    a.href = canvas.toDataURL();
+
+    a.download = "resizedImage.png";
+    a.click();
+
+    document.body.removeChild(a);
+  
+  form = document.querySelector("form");
+  form.reset();
+  window.location.reload();
+}
+
+
+
+
+
+

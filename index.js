@@ -14,6 +14,8 @@ const ensureLogIn = require('connect-ensure-login').ensureLoggedIn;
 const authRouter = require('./routes/auth');
 const LocalStrategy = require('passport-local');
 
+const slugify = require('slugify');
+
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const compression = require('compression');
@@ -39,6 +41,7 @@ app.use((req,res, next )=>{
 
 dotenv.config();
 app.use(bodyParser.json());
+
 passport.use(new LocalStrategy(User.authenticate()));
 
 passport.use(new LocalStrategy(User.authenticate()));
@@ -296,13 +299,11 @@ app.get("/search", async (req,res)=>{
 });
 
 
-app.get("/photos/:name", function(req,res, next) { 
-
-
-	const requestedImgName = req.params.name;
+app.get( "/photos/:slug", function(req,res, next) { 
 	
+	const requestedImgslug = req.params.slug;
   
-     Product.findOne({name: requestedImgName}, function(err, image){
+     Product.findOne({slug: requestedImgslug}, function(err, image){
 
 	    const category= image.category;
 		console.log(category);
@@ -400,6 +401,7 @@ app.use((req, res, next) => {
 
 const PORT = process.env.PORT || 3000;
    app.listen(PORT || process.env.Port , function () {
+
   console.log('Server is started on http://localhost:'+PORT);
  });
 

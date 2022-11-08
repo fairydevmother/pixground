@@ -4,7 +4,7 @@
   <%- include('partials/head'); %>
    <title> <%= image.name %> | Download Image Now</title>
 
-   
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <style>
 	.fa {
   font-size: 50px;
@@ -75,13 +75,41 @@
                 
            </button> 
          
-            
+           
            
         </div>
+        
+
          <script async src="https://static.addtoany.com/menu/page.js"></script>
          <!-- AddToAny END -->
 				</div>
         
+         <div class="inputs">
+          <form class="form" id="form" action="">
+
+            <input  type="radio" id="1080"  name="1920" value="1080">
+                 <label for="1080">1080p&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PNG</label><br>
+            <input type="radio" id="2K" name="2048" value="1080">
+                   <label for="2K">2K &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; PNG </label><br>
+            <input type="radio" id="4K"  name="3840" value="2160">  
+                 <label for="4K">4K &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; PNG</label><br>
+            <input type="radio" id="8K" name="7680" value="4320"> 
+                 <label for="8K">8K &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; PNG</label><br>
+          </form>
+          <button class="view" class="fancybox" type="submit" id="preview">Preview</button>
+          <button class="view downn" id="down">Download</button>
+      
+          
+        <div class="canvasWrapper">
+          
+          <canvas id="result">
+            <img crossorigin="anonymous"  src="<%= image.profilePhotoLocation %>" id="imgDisplayed" alt="">
+          </canvas>
+        
+        </div>
+      </div>
+       
+
 				<div class="boxTwo">	
                    <ul class="list-unstyled">
                     
@@ -99,6 +127,9 @@
                 </div>
 				
             </div>
+
+
+
             
         </div>
         
@@ -113,10 +144,10 @@
         <div class="grid image-grid" >
          
            
-           <%  if(typeof items !== 'undefined') { items.forEach(function(image) { %>
+           <%  if(items !== undefined && typeof items !== 'undefined') { items.forEach(function(image) { %>
           <div class="grid-block">
             <div class="tile">
-              <a class="tile-link" href="/photos/<%= image.name %>">
+              <a class="tile-link" href="/photos/<%= image.slug%>">
                 <!-- <% if(image.resolution=='3840x2160'){ %>
                   <div class="badge bg-dark text-white fourK" >  4K  </div>
                   <% } else { %>

@@ -454,4 +454,62 @@ body {
   height:14rem;
 }
 
+
+
+.view{ 
+  border-width: 1px;
+  font-weight: 600;
+  border-radius: 19px;
+  font-size: 12px;
+  line-height: 1.6em;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  padding: 10px 20px;
+  text-transform: uppercase;
+  
+  color: black;
+  
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: white;
+  border: 1px solid transparent;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  
+  .downn{ 
+  
+    background-color: #F3B133;
+    color:white;
+  }
+
+  
+
+.form{
+  padding:10px;
 }
+.inputs{
+  background-color:#191B26;
+  width:25%;
+  color:white;
+  
+}
+ .canvasWrapper {
+  display:none;
+}
+
+
+input {
+  margin-bottom: 15px;
+ 
+  font-size: 16px;
+ 
+}
+
+#file {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+}
+
